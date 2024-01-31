@@ -2981,7 +2981,7 @@ game:GetService("RunService").heartbeat:Connect(function()
         or (v.Animation.AnimationId:match("rbxassetid://2788308661"))
         or (v.Animation.AnimationId:match("rbxassetid://2788290270")) then
             local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(6,10,0) * (80)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(4,12,0) * (90)
             game:GetService("RunService").RenderStepped:Wait()
             game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
         end
@@ -3007,7 +3007,7 @@ Create('expfling!',function()
             or (v.Animation.AnimationId:match("rbxassetid://2788308661"))
             or (v.Animation.AnimationId:match("rbxassetid://2788290270")) then
                 local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(3,10,0) * (80)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(3,12,0) * (80)
                 game:GetService("RunService").RenderStepped:Wait()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
             end
