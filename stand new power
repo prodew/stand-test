@@ -1664,6 +1664,15 @@ function foranti()
 end
 
 Create("map!",function()
+    game.Workspace.FallenPartsDestroyHeight = -10000
+    local part = Instance.new("Part")
+    part.Size = Vector3.new(100, 2, 100)
+    part.Name = "AntiAutoKill"
+    part.Parent = game.Workspace
+    part.Anchored = true
+    local pl = game.Players.LocalPlayer.Character
+    part.Position = Vector3.new(0, 88,0)
+    pl.HumanoidRootPart.CFrame = part.CFrame
     workspace.MAP:Destroy()
 wait(1)
 workspace.Cashiers:Destroy()
