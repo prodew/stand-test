@@ -1,3 +1,7 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,150,0)
+
 game.StarterGui:SetCore("SendNotification", {
 	Title = "Stop using my script"; 
 	Text = "script dew aka deer";
@@ -5,6 +9,55 @@ game.StarterGui:SetCore("SendNotification", {
 	Icon = "rbxassetid://16005965106";
 	Duration = 15;
 	})
+    wait(0.1)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Stop using my script"; 
+        Text = "script dew aka deer";
+        Text = "discrod deer14927";
+        Icon = "rbxassetid://16005965106";
+        Duration = 15;
+        })
+        wait(0.1)
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Stop using my script"; 
+            Text = "script dew aka deer";
+            Text = "discrod deer14927";
+            Icon = "rbxassetid://16005965106";
+            Duration = 15;
+            })
+            wait(0.1)
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Stop using my script"; 
+                Text = "script dew aka deer";
+                Text = "discrod deer14927";
+                Icon = "rbxassetid://16005965106";
+                Duration = 15;
+                })
+                wait(0.1)
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "Stop using my script"; 
+                    Text = "script dew aka deer";
+                    Text = "discrod deer14927";
+                    Icon = "rbxassetid://16005965106";
+                    Duration = 15;
+                    })
+                    wait(0.1)
+                    game.StarterGui:SetCore("SendNotification", {
+                        Title = "Stop using my script"; 
+                        Text = "script dew aka deer";
+                        Text = "discrod deer14927";
+                        Icon = "rbxassetid://16005965106";
+                        Duration = 15;
+                        })
+                        wait(0.1)
+                        game.StarterGui:SetCore("SendNotification", {
+                            Title = "Stop using my script"; 
+                            Text = "script dew aka deer";
+                            Text = "discrod deer14927";
+                            Icon = "rbxassetid://16005965106";
+                            Duration = 15;
+                            })
+                            wait(0.1)
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/twink"))()
 local Window = UILibrary.Load("Pro script da hood👑")
 local JOTARO = Window.AddPage("Jotaro Mode")
@@ -178,7 +231,7 @@ Ringtone(4903895449)
 end)
 JOTARO.AddButton("ORA ORA ORA ORA ORA!",function()
 chat("ORA ORA ORA ORA ORA ORA ORA ORAA")
-Ringtone(6678126154)
+Ringtone(2938792244)--6678126154
     wait(1)
 end)
 JOTARO.AddButton("I Held Back..",function()
@@ -547,8 +600,7 @@ tool.AddButton("bat real!",function()
         game:GetService("RunService").heartbeat:Connect(function()
         if getgenv().BatFling == true then 
         local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X*0,350,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z*0)
-        game:GetService("RunService").RenderStepped:Wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0) * (0)
         game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
         end 
         end)
@@ -562,6 +614,125 @@ tool.AddButton("bat real!",function()
     LoadAnimation:AdjustSpeed(1.43)
     wait(0.25)
     Change(6832470734)
+    wait(0.1)
+    Call()
+    getgenv().BatFling = true
+    wait(1.5)
+    getgenv().BatFling = false
+    end)
+end)
+tool.AddButton("Knife sound!",function()
+    function Ringtone(ID)
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+        local Tool = nil
+        if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+        Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+        game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+        game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Character
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+        local args = {
+            [1] = "RingTone",
+            [2] = ID
+            
+        }
+        game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Backpack
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+        if Tool ~= true then
+        if Tool then
+        Tool.Parent = game:GetService("Players").LocalPlayer.Character
+        end
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Play Sound 
+        game.Players:chat("/e cm")
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Stop Audio
+        function Stop()
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+        local Tool = nil
+        if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+        Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+        game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+        game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Character
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Backpack
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+        if Tool ~= true then
+        if Tool then
+        Tool.Parent = game:GetService("Players").LocalPlayer.Character
+        end
+        end
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Change Id
+        function Change(ID)
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+        local Tool = nil
+        if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+        Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+        game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+        game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Character
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+        local args = {
+            [1] = "RingTone",
+            [2] = ID
+            
+        }
+        game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Backpack
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+        if Tool ~= true then
+        if Tool then
+        Tool.Parent = game:GetService("Players").LocalPlayer.Character
+        end
+        end
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
+        function Call()
+        game.Players:chat("/e cm")
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
+        -- Ringtone(ID)
+        -- Stop()
+        -- Change(ID)
+        -- Call()
+    
+    
+    
+    
+    
+    
+        getgenv().BatFling = false
+        game:GetService("RunService").heartbeat:Connect(function()
+        if getgenv().BatFling == true then 
+        local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0) * (0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
+        end 
+        end)
+    game.Players.LocalPlayer.Backpack["[Knife]"].Activated:connect(function()
+    local Animation = Instance.new("Animation")
+    Animation.AnimationId = "rbxassetid://3033700364"
+    local LoadAnimation = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):LoadAnimation(Animation)
+    LoadAnimation.Looped = false
+    LoadAnimation.Priority = Enum.AnimationPriority.Action
+    LoadAnimation:Play()
+    LoadAnimation:AdjustSpeed(1.43)
+    wait(0.25)
+    Change(7674672480)
     wait(0.1)
     Call()
     getgenv().BatFling = true
@@ -2609,6 +2780,8 @@ tool.AddButton("one punch",function()
           tool = Instance.new("Tool")
         tool.RequiresHandle = false
         tool.Name = "one punch"
+        tool.ToolTip = "punch"
+        tool.TextureId = "rbxassetid://10338473987"
         tool.Activated:connect(function()
             local A_1 = game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("SuperSpeed")
             local A_2 = game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("HulkJump")
@@ -2683,7 +2856,7 @@ tool.AddButton("one punch",function()
     ----------------------------------------
             end)
         wait(0.8)
-    Ringtone(6290067239)
+    Ringtone(6073433216)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 0)
     wait(1.4)
     game:GetService('RunService'):UnbindFromRenderStep("Reach")
@@ -2717,6 +2890,16 @@ tool.AddButton("one punch",function()
     game:GetService("RunService").heartbeat:Connect(function()
         for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
             if (v.Animation.AnimationId:match("rbxassetid://8254794168")) then
+                local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X*getgenv().sadfasfrfgrthrtyhj,getgenv().sadfasfrfgrthrtyhj,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z*getgenv().sadfasfrfgrthrtyhj)
+                game:GetService("RunService").RenderStepped:Wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
+            end
+        end
+    end)
+    game:GetService("RunService").heartbeat:Connect(function()
+        for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
+            if (v.Animation.AnimationId:match("rbxassetid://3354699999")) then
                 local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
                 game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X*getgenv().sadfasfrfgrthrtyhj,getgenv().sadfasfrfgrthrtyhj,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z*getgenv().sadfasfrfgrthrtyhj)
                 game:GetService("RunService").RenderStepped:Wait()
@@ -2958,7 +3141,7 @@ tool.AddButton("one kick",function()
     ----------------------------------------
             end)
         wait(1)
-Ringtone(8907573127)
+Ringtone(4929575301)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 0)
     wait(1.4)
     game:GetService('RunService'):UnbindFromRenderStep("Reach")
@@ -3204,8 +3387,8 @@ tool.AddButton("fake animatoin ninja",function()
     end
     wait(1)
     local Animate = game.Players.LocalPlayer.Character.Animate
-    Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=656117400"
-    Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=656118341"
+    Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921301576"
+    Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921302207"
     Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=656121766"
     Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=656118852"
     Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=656117878"
@@ -4261,6 +4444,396 @@ end)
 tool.AddButton("script Detazy",function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/I4MMO/Detazy/main/Main", true))()
 end)
+tool.AddButton("script animatoin dance real",function()
+    -- Credit for Zackary#1011 for making animation pack/++
+-- and credit for ilovebee#6666 for giving animations id
+
+repeat
+    wait()
+until game:IsLoaded() and game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR") and game.Players.LocalPlayer.PlayerGui.MainScreenGui:FindFirstChild("AnimationPack") and game.Players.LocalPlayer.PlayerGui.MainScreenGui:FindFirstChild("AnimationPlusPack")
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Lean") then
+    game.ReplicatedStorage.ClientAnimations.Lean:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Lay") then
+    game.ReplicatedStorage.ClientAnimations.Lay:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Dance1") then
+    game.ReplicatedStorage.ClientAnimations.Dance1:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Dance2") then
+    game.ReplicatedStorage.ClientAnimations.Dance2:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Greet") then
+    game.ReplicatedStorage.ClientAnimations.Greet:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Chest Pump") then
+    game.ReplicatedStorage.ClientAnimations["Chest Pump"]:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Praying") then
+    game.ReplicatedStorage.ClientAnimations.Praying:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("TheDefault") then
+    game.ReplicatedStorage.ClientAnimations.TheDefault:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Sturdy") then
+    game.ReplicatedStorage.ClientAnimations.Sturdy:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Rossy") then
+    game.ReplicatedStorage.ClientAnimations.Rossy:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Griddy") then
+    game.ReplicatedStorage.ClientAnimations.Griddy:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("TPose") then
+    game.ReplicatedStorage.ClientAnimations.TPose:Destroy()
+end
+
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("SpeedBlitz") then
+    game.ReplicatedStorage.ClientAnimations.SpeedBlitz:Destroy()
+end
+
+local Animations = game.ReplicatedStorage.ClientAnimations
+
+local LeanAnimation = Instance.new("Animation", Animations)
+LeanAnimation.Name = "Lean"
+LeanAnimation.AnimationId = "rbxassetid://3152375249"
+
+local LayAnimation = Instance.new("Animation", Animations)
+LayAnimation.Name = "Lay"
+LayAnimation.AnimationId = "rbxassetid://3152378852"
+
+local Dance1Animation = Instance.new("Animation", Animations)
+Dance1Animation.Name = "Dance1"
+Dance1Animation.AnimationId = "rbxassetid://3189773368"
+
+local Dance2Animation = Instance.new("Animation", Animations)
+Dance2Animation.Name = "Dance2"
+Dance2Animation.AnimationId = "rbxassetid://3189776546"
+
+local GreetAnimation = Instance.new("Animation", Animations)
+GreetAnimation.Name = "Greet"
+GreetAnimation.AnimationId = "rbxassetid://3189777795"
+
+local ChestPumpAnimation = Instance.new("Animation", Animations)
+ChestPumpAnimation.Name = "Chest Pump"
+ChestPumpAnimation.AnimationId = "rbxassetid://3189779152"
+
+local PrayingAnimation = Instance.new("Animation", Animations)
+PrayingAnimation.Name = "Praying"
+PrayingAnimation.AnimationId = "rbxassetid://3487719500"
+
+local TheDefaultAnimation = Instance.new("Animation", Animations)
+TheDefaultAnimation.Name = "TheDefault"
+TheDefaultAnimation.AnimationId = "rbxassetid://11710529975" -- FIX THIS
+
+local SturdyAnimation = Instance.new("Animation", Animations)
+SturdyAnimation.Name = "Sturdy"
+SturdyAnimation.AnimationId = "rbxassetid://11710524717"
+
+local RossyAnimation = Instance.new("Animation", Animations)
+RossyAnimation.Name = "Rossy"
+RossyAnimation.AnimationId = "rbxassetid://11710527244"
+
+local GriddyAnimation = Instance.new("Animation", Animations)
+GriddyAnimation.Name = "Griddy"
+GriddyAnimation.AnimationId = "rbxassetid://11710529220"
+
+local TPoseAnimation = Instance.new("Animation", Animations)
+TPoseAnimation.Name = "TPose"
+TPoseAnimation.AnimationId = "rbxassetid://11710524200"
+
+local SpeedBlitzAnimation = Instance.new("Animation", Animations)
+SpeedBlitzAnimation.Name = "SpeedBlitz"
+SpeedBlitzAnimation.AnimationId = "rbxassetid://11710541744"
+
+function AnimationPack(Character)
+    Character:WaitForChild'Humanoid'
+    repeat
+        wait()
+    until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR") and game.Players.LocalPlayer.PlayerGui.MainScreenGui:FindFirstChild("AnimationPack") and game.Players.LocalPlayer.PlayerGui.MainScreenGui:FindFirstChild("AnimationPlusPack")
+
+    local AnimationPack = game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.AnimationPack
+    local AnimationPackPlus = game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.AnimationPlusPack
+    local ScrollingFrame = AnimationPack.ScrollingFrame
+    local CloseButton = AnimationPack.CloseButton
+    local ScrollingFramePlus = AnimationPackPlus.ScrollingFrame
+    local CloseButtonPlus = AnimationPackPlus.CloseButton
+
+    local Lean = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(LeanAnimation)
+
+    local Lay = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(LayAnimation)
+
+    local Dance1 = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Dance1Animation)
+
+    local Dance2 = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Dance2Animation)
+
+    local Greet = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(GreetAnimation)
+
+    local ChestPump = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(ChestPumpAnimation)
+
+    local Praying = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(PrayingAnimation)
+
+    local TheDefault = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(TheDefaultAnimation)
+
+    local Sturdy = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(SturdyAnimation)
+
+    local Rossy = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(RossyAnimation)
+
+    local Griddy = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(GriddyAnimation)
+
+    local TPose = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(TPoseAnimation)
+
+    local SpeedBlitz = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(SpeedBlitzAnimation)
+
+    AnimationPack.Visible = true
+
+    AnimationPackPlus.Visible = true
+
+    ScrollingFrame.UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+    ScrollingFramePlus.UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Lean" then
+                v.Name = "LeanButton"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Lay" then
+                v.Name = "LayButton"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Dance1" then
+                v.Name = "Dance1Button"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Dance2" then
+                v.Name = "Dance2Button"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Greet" then
+                v.Name = "GreetButton"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Chest Pump" then
+                v.Name = "ChestPumpButton"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Praying" then
+                v.Name = "PrayingButton"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "The Default" then
+                v.Name = "TheDefaultButton"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Sturdy" then
+                v.Name = "SturdyButton"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Rossy" then
+                v.Name = "RossyButton"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Griddy" then
+                v.Name = "GriddyButton"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "T Pose" then
+                v.Name = "TPoseButton"
+            end
+        end
+    end
+
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Speed Blitz" then
+                v.Name = "SpeedBlitzButton"
+            end
+        end
+    end
+
+    function Stop()
+        Lean:Stop()
+        Lay:Stop()
+        Dance1:Stop()
+        Dance2:Stop()
+        Greet:Stop()
+        ChestPump:Stop()
+        Praying:Stop()
+        TheDefault:Stop()
+        Sturdy:Stop()
+        Rossy:Stop()
+        Griddy:Stop()
+        TPose:Stop()
+        SpeedBlitz:Stop()
+    end
+
+    --credit Zackary#1011 (again cuz someone might skid this to their script)
+
+    local LeanTextButton = ScrollingFrame.LeanButton
+    local LayTextButton = ScrollingFrame.LayButton
+    local Dance1TextButton = ScrollingFrame.Dance1Button
+    local Dance2TextButton = ScrollingFrame.Dance2Button
+    local GreetTextButton = ScrollingFrame.GreetButton
+    local ChestPumpTextButton = ScrollingFrame.ChestPumpButton
+    local PrayingTextButton = ScrollingFrame.PrayingButton
+    local TheDefaultTextButton = ScrollingFramePlus.TheDefaultButton
+    local SturdyTextButton = ScrollingFramePlus.SturdyButton
+    local RossyTextButton = ScrollingFramePlus.RossyButton
+    local GriddyTextButton = ScrollingFramePlus.GriddyButton
+    local TPoseTextButton = ScrollingFramePlus.TPoseButton
+    local SpeedBlitzTextButton = ScrollingFramePlus.SpeedBlitzButton
+
+    AnimationPack.MouseButton1Click:Connect(function()
+        if ScrollingFrame.Visible == false then
+            ScrollingFrame.Visible = true
+            CloseButton.Visible = true
+            AnimationPackPlus.Visible = false
+        end
+    end)
+    AnimationPackPlus.MouseButton1Click:Connect(function()
+        if ScrollingFramePlus.Visible == false then
+            ScrollingFramePlus.Visible = true
+            CloseButtonPlus.Visible = true
+            AnimationPack.Visible = false
+        end
+    end)
+    CloseButton.MouseButton1Click:Connect(function()
+        if ScrollingFrame.Visible == true then
+            ScrollingFrame.Visible = false
+            CloseButton.Visible = false
+            AnimationPackPlus.Visible = true
+        end
+    end)
+    CloseButtonPlus.MouseButton1Click:Connect(function()
+        if ScrollingFramePlus.Visible == true then
+            ScrollingFramePlus.Visible = false
+            CloseButtonPlus.Visible = false
+            AnimationPack.Visible = true
+        end
+    end)
+
+    LeanTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Lean:Play()
+    end)
+    LayTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Lay:Play()
+    end)
+    Dance1TextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Dance1:Play()
+    end)
+    Dance2TextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Dance2:Play()
+    end)
+    GreetTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Greet:Play()
+    end)
+    ChestPumpTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        ChestPump:Play()
+    end)
+    PrayingTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Praying:Play()
+    end)
+    TheDefaultTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        TheDefault:Play()
+    end)
+    SturdyTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Sturdy:Play()
+    end)
+    RossyTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Rossy:Play()
+    end)
+    GriddyTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Griddy:Play()
+    end)
+    TPoseTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        TPose:Play()
+    end)
+    SpeedBlitzTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        SpeedBlitz:Play()
+    end)
+
+    game:GetService("Players").LocalPlayer.Character.Humanoid.Running:Connect(function()
+        Stop()
+    end)
+
+    game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+        Stop()
+    end)
+end
+AnimationPack(game.Players.LocalPlayer.Character)
+game.Players.LocalPlayer.CharacterAdded:Connect(AnimationPack)
+end)
 tool.AddButton("script TP AND LOL",function()
     if not game['Loaded'] or not game:GetService('Players')['LocalPlayer'] then
         game['Loaded']:Wait();
@@ -4380,11 +4953,14 @@ tool.AddButton("script TP AND LOL",function()
     elseif key == 't' then
         Ringtone(374106817)
     elseif key == 'e' then
+        wait(0.2)
         Ringtone(5773418559)
     elseif key == 'v' then
         Ringtone(2784767783)
     elseif key == 'b' then
         Ringtone(9068077052)
+    elseif key == 'n' then
+        Ringtone(2738830850)
     elseif key == 'c' then
         Ringtone(1081581251)
         local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid;
@@ -4567,6 +5143,16 @@ if not game.Players.LocalPlayer.Character:FindFirstChild("In-gameMask") then
        New.Parent = game.Players.LocalPlayer.Backpack
   end
  end)
+ function battool()
+    Game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=game.Workspace.Ignored.Shop["[Bat] - $265"].Head.CFrame*CFrame.new(0,-5,0)
+    fireclickdetector(game.Workspace.Ignored.Shop["[Bat] - $265"].ClickDetector)
+    Game.Players.LocalPlayer.Character.Backpack:FindFirstChild("[Bat]")
+    Game.Players.LocalPlayer.Character.Backpack:FindFirstChild("[Bat]").Parent = Game.Players.LocalPlayer.Character
+    Game.Players.LocalPlayer.Character.Character:FindFirstChild('[Bat]'):Activate()
+ end
+ BT.AddButton("BAT",function()
+    battool()
+end)
  BT.AddButton("bat two!",function()
 local b = 2
 ----------------------------------------------------------------------------------------------
@@ -4647,35 +5233,10 @@ BT.AddButton("tool all damage!",function()
     game.Players.LocalPlayer.Backpack["[StopSign]"].Parent = game.Players.LocalPlayer.Character
 end)
  BT.AddButton("batdis!",function()
-    local b = 2 
-    ----------------------------------------------------------------------------------------------
-    local a = {}
-    local savepos = game.Players.LocalPlayer.Character.UpperTorso.Position
-    repeat
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Bat] - $265"].Head.CFrame + Vector3.new(0, 3, 0)
-        wait(0.6)
-        fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Bat] - $265"].ClickDetector)
-        for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(savepos)
-            if v.Name == "[Bat]" then
-                v.Parent = game.Players.LocalPlayer.Character
-                table.insert(a, v)
-            end
-        end
-    until #a >= b
-    local c = -1
-    for i, v in next, game.Players.LocalPlayer.Character:GetChildren() do
-        if v.Name == "[Bat]" then
-            v.Parent = game.Players.LocalPlayer.Backpack
-            v.GripPos = Vector3.new(-1.5,c,1.55)
-            c = c + - 4
-            v.GripForward = Vector3.new(0, 0, 0)
-            v.GripRight = Vector3.new(0.19607843458652496, 0.019607843831181526, 0.9803922176361084)
-            v.GripUp = Vector3.new(-0.9755268096923828, -0.09755268692970276, 0.19705550372600555)
-            v.Parent = game.Players.LocalPlayer.Character
-        end
-    end
-    end)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").GripPos = Vector3.new(-1.5,-1,1.55)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").GripRight = Vector3.new(0.19607843458652496, 0.019607843831181526, 0.9803922176361084)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").GripUp = Vector3.new(-0.9755268096923828, -0.09755268692970276, 0.19705550372600555)
+ end)
 
     BT.AddButton("Stop sign!",function()
         local b = 1
@@ -4997,11 +5558,24 @@ MIs.AddLabel("made by dew👑👑👑👑👑")
 MIs.AddLabel("Pro script💀💀  is real")
 MIs.AddLabel("deer audio  id sound immos")
 
-MIs.AddButton("ora!",function()
-chat("ora!")
-end)
-MIs.AddButton("noora!",function()
-chat("nora!")
+MIs.AddButton("anti stomp!",function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.Vdrtf32.Character.HumanoidRootPart.Position)*CFrame.new(0,0,4)
+    game.Players.LocalPlayer.Backpack["Combat"].Parent = game.Players.LocalPlayer.Character
+    game.ReplicatedStorage.MainEvent:FireServer("ChargeButton")
+    chat("walkpro!")
+    wait(5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.Vdrtf32.Character.HumanoidRootPart.Position)*CFrame.new(0,3,0)
+    wait(.2)
+    game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
+    wait(.1)
+    chat("weld!")
+    wait(1)
+    chat("fling!")
+    wait(1)
+    chat("at!")
+    wait(1)
+    chat("crew!")
+    chat("map!")
 end)
 MIs.AddButton("safe2!",function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117, -57, 147)
@@ -5038,12 +5612,6 @@ chat("alt!")
 end)
 MIs.AddButton("run!",function()
 chat("run!")
-end)
-MIs.AddButton("problock!",function()
-    if game.LocalPlayer.Character:FindFirstChild('BodyEffects'):FindFirstChild('Block') then STAND.Character:FindFirstChild('BodyEffects'):FindFirstChild('Block'):Destroy() end
-    MainEvent:FireServer("Block",true) wait()
-    MainEvent:FireServer("Block",false)
-end
 end)
 MIs.AddButton("remove stand zer1ckq!",function()
     local Alt = "zer1ckq"
@@ -5127,8 +5695,6 @@ MIs.AddButton("bar!",function()
     
     game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.Image = "http://www.roblox.com/asset/?id=5209162390"
     
-    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.Image = "http://www.roblox.com/asset/?id=8538423785"
-    
     game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = "http://www.roblox.com/asset/?id=11767037107"
     
     game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
@@ -5139,9 +5705,11 @@ MIs.AddButton("bar!",function()
     
     game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.TextLabel.Text = " HP"
     
-    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.Text = "INF Energy                  "
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.Text = "Energy               "
     
     game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.TextLabel.Text = "           Armor "
+
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.ImageColor3 = Color3.fromRGB(55,55,55)
     
     spawn(function()
         game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
@@ -5177,8 +5745,6 @@ game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Li
 
 game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.Image = "http://www.roblox.com/asset/?id=5209162390"
 
-game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.Image = "http://www.roblox.com/asset/?id=8538423785"
-
 game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = "http://www.roblox.com/asset/?id=11767037107"
 
 game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
@@ -5189,26 +5755,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Pictur
 
 game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.TextLabel.Text = " HP"
 
-game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.Text = "INF Energy                  "
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.Text = "Energy                        "
 
 game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.TextLabel.Text = "           Armor "
-
-
-spawn(function()
-    game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
-    wait(1)
-    local H_1 = Instance.new("Highlight")
-    H_1.Parent = game.Players.LocalPlayer.Character
-    H_1.FillColor = Color3.new(0,0,0)
-    H_1.OutlineColor = Color3.new(255,255,255)
-    H_1.FillTransparency = 0.9
-    H_1.OutlineTransparency = 0.75
-    wait(0.1)
-    local a = Instance.new("StringValue")
-    a.Parent = game.Players.LocalPlayer.Character.BodyEffects.Movement
-    a.Name = "FastSprint"
-    
-    game:GetService('RunService'):BindToRenderStep("fr", 0 , function()
-    game.Players.LocalPlayer.Character.Humanoid.Health = 100
-    end)
-    end)
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.ImageColor3 = Color3.fromRGB(55,55,55)
