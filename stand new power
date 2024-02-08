@@ -3047,7 +3047,7 @@ Create('expfling!',function()
             or (v.Animation.AnimationId:match("rbxassetid://2788308661"))
             or (v.Animation.AnimationId:match("rbxassetid://2788290270")) then
                 local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(4,8,0) * (90)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(4,6,0) * (90)
                 game:GetService("RunService").RenderStepped:Wait()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
             end
@@ -4177,7 +4177,7 @@ end)
 
 rs.Heartbeat:connect(function()
     if antis2 == true and KO(TARGET).Value == true then
-        getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,-1.2,0)CFrame.Angles(math.pi*0,0,0)
+        getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,-0.8,0)CFrame.Angles(math.pi*0,0,0)
         local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
         if STAND.Character:FindFirstChild('Combat') then STAND.Character:FindFirstChild('Combat'):Activate() STAND.Character:FindFirstChild('Combat'):Deactivate() else STAND.Backpack:FindFirstChild('Combat').Parent = STAND.Character
         end
