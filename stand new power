@@ -15,7 +15,7 @@ getgenv().Settings = {
     ['GunMode'] = 'Under', --[Sky | Under]  The Stand Will Shooting Just Like What In The Settings
     ['Resolver'] = true, --[true | false] Turn On Or Off Resolver If Someone Using Anti Lock
     --// ! Misc ! \\--
-    ['LowGraphics'] = false, --[true | false] Turns graphics down so your stand doesnt lag too much
+    ['LowGraphics'] = true, --[true | false] Turns graphics down so your stand doesnt lag too much
     
     ['AntiStomp'] = false, --[true | false] The Stand Will Cannot Be Stomped Or Grabbed
     ['CustomName'] = 'Master', --Custom Name Text Default Is [Master] Example Of it 'Im Here, Master!'
