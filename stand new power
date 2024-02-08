@@ -1671,7 +1671,7 @@ Create("map!",function()
     part.Parent = game.Workspace
     part.Anchored = true
     local pl = game.Players.LocalPlayer.Character
-    part.Position = Vector3.new(0, 84,0)
+    part.Position = Vector3.new(0, 78,0)
     pl.HumanoidRootPart.CFrame = part.CFrame
 
     workspace.MAP:Destroy()
