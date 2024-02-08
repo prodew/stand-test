@@ -4169,7 +4169,7 @@ end)
 rs.Heartbeat:connect(function()
     if blockantis == true and KO(OWNER).Value == true then
         Stop()
-        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-8,0)CFrame.Angles(math.pi*0,0,0)
+        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-0.8,0)CFrame.Angles(math.pi*0,0,0)
     elseif blockantis == true and KO(OWNER).Value == false then
         TWEEN(CFrame.new(0, 81, 0))
     end
