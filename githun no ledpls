@@ -3068,6 +3068,8 @@ tool.AddButton("one kick",function()
           tool = Instance.new("Tool")
         tool.RequiresHandle = false
         tool.Name = "one kick"
+        tool.ToolTip = "kick"
+        tool.TextureId = "rbxassetid://3906719295"
         tool.Activated:connect(function()
             local A_1 = game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("SuperSpeed")
             local A_2 = game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("HulkJump")
