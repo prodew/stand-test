@@ -2711,7 +2711,7 @@ tool.AddButton("one punch",function()
         -- Call()
     
     local KIckAnim = Instance.new('Animation');
-    KIckAnim.AnimationId = "rbxassetid://8254794168";
+    KIckAnim.AnimationId = "rbxassetid://3354696735";
     local gyat = game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim)
     
     if not game['Loaded'] or not game:GetService('Players')['LocalPlayer'] then
@@ -2811,7 +2811,8 @@ tool.AddButton("one punch",function()
                 wait(0.00000000001)
             local Char = game.Players.LocalPlayer.Character local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
             for i,v in next, Hum:GetPlayingAnimationTracks() do
-                if v.Animation.AnimationId == "rbxassetid://3354699999" then
+                if v.Animation.AnimationId == "rbxassetid://3354699999"
+                or v.Animation.AnimationId == "rbxassetid://2788292075" then
                     v:Stop()
                     gyat:Play()
                     gyat:AdjustSpeed(2.5)
