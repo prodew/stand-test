@@ -15,7 +15,7 @@ getgenv().Settings = {
     ['GunMode'] = 'Under', --[Sky | Under]  The Stand Will Shooting Just Like What In The Settings
     ['Resolver'] = true, --[true | false] Turn On Or Off Resolver If Someone Using Anti Lock
     --// ! Misc ! \\--
-    ['LowGraphics'] = true, --[true | false] Turns graphics down so your stand doesnt lag too much
+    ['LowGraphics'] = false, --[true | false] Turns graphics down so your stand doesnt lag too much
     
     ['AntiStomp'] = false, --[true | false] The Stand Will Cannot Be Stomped Or Grabbed
     ['CustomName'] = 'Master', --Custom Name Text Default Is [Master] Example Of it 'Im Here, Master!'
@@ -4169,7 +4169,7 @@ end)
 rs.Heartbeat:connect(function()
     if blockantis == true and KO(OWNER).Value == true then
         Stop()
-        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-1.2,0)CFrame.Angles(math.pi*0,0,0)
+        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-8,0)CFrame.Angles(math.pi*0,0,0)
     elseif blockantis == true and KO(OWNER).Value == false then
         TWEEN(CFrame.new(0, 81, 0))
     end
