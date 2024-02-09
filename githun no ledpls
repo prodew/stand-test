@@ -873,6 +873,11 @@ tool.AddButton("real kick!",function()
             game:GetService('Players').LocalPlayer.Character:WaitForChild('FULLY_LOADED_CHAR');
             kick()
     end)
+tool.AddButton("mask show name!",function()
+    for i,v in pairs(game.Workspace.Players:GetChildren()) do
+        v:FindFirstChildWhichIsA('Humanoid').DisplayDistanceType = 'Subject'
+    end
+end)
 tool.AddButton("push!",function()
     function Ringtone(ID)
         --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
@@ -5472,7 +5477,7 @@ MIs.AddButton("anti stomp!",function()
     wait(.1)
     chat("weld!")
     wait(1)
-    chat("fling!")
+    chat("expfling!")
     wait(1)
     chat("at!")
     wait(1)
@@ -5480,6 +5485,14 @@ MIs.AddButton("anti stomp!",function()
     chat("map!")
     game:GetService("Players").LocalPlayer.Backpack.Wallet:Destroy()
 game:GetService("Players").LocalPlayer.Backpack["[Boombox]"]:Destroy()
+    game.Workspace.FallenPartsDestroyHeight = -900000000
+    local part = Instance.new("Part")
+    part.Size = Vector3.new(99000000000, 2, 99000000000)
+    part.Name = "AntiAutoKill"
+    part.Parent = game.Workspace
+    part.Anchored = true
+    local pl = game.Players.LocalPlayer.Character
+    part.Position = Vector3.new(0,-150,-10)
 end)
 MIs.AddButton("safe2!",function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117, -57, 147)
