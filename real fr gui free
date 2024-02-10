@@ -12,7 +12,7 @@ game.StarterGui:SetCore("SendNotification", {
     wait(0.1)
 
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/twink"))()
-local Window = UILibrary.Load("dew da hood gui")
+local Window = UILibrary.Load("dew da hood pro gui ")
 local JOTARO = Window.AddPage("Jotaro Mode")
 local DIO = Window.AddPage("Dio Mode")
 local tool = Window.AddPage("Pro script")
@@ -82,10 +82,10 @@ game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key)
     if key == "m" then
         if Closed == true then
         Closed = false
-            game.CoreGui["dew da hood gui"].Enabled = false
+            game.CoreGui["dew da hood pro gui "].Enabled = false
         else
             Closed = true
-            game.CoreGui["dew da hood gui"].Enabled = true
+            game.CoreGui["dew da hood pro gui "].Enabled = true
         end
     end
 end)
