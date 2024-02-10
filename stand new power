@@ -1679,6 +1679,18 @@ wait(1)
 workspace.Cashiers:Destroy()
 wait(1)
 workspace.Ignored:Destroy()
+
+
+game:GetService("Players").LocalPlayer.Backpack.Wallet:Destroy()
+game:GetService("Players").LocalPlayer.Backpack["[Boombox]"]:Destroy()
+    game.Workspace.FallenPartsDestroyHeight = -900000000
+    local part = Instance.new("Part")
+    part.Size = Vector3.new(99000000000, 2, 99000000000)
+    part.Name = "proantikill"
+    part.Parent = game.Workspace
+    part.Anchored = true
+    local pl = game.Players.LocalPlayer.Character
+    part.Position = Vector3.new(0,-150,-10)
 end)
 
 Create("Fast!",function()
