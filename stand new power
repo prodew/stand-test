@@ -3040,7 +3040,7 @@ game:GetService("RunService").heartbeat:Connect(function()
         or (v.Animation.AnimationId:match("rbxassetid://2788308661"))
         or (v.Animation.AnimationId:match("rbxassetid://2788290270")) then
             local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(4,12,0) * (90)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,12,0) * (90)
             game:GetService("RunService").RenderStepped:Wait()
             game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
         end
@@ -3069,7 +3069,7 @@ Create('expfling!',function()
             or (v.Animation.AnimationId:match("rbxassetid://2788308661"))
             or (v.Animation.AnimationId:match("rbxassetid://2788290270")) then
                 local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(4,6,0) * (90)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,6,0) * (90)
                 game:GetService("RunService").RenderStepped:Wait()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
             end
@@ -4191,7 +4191,7 @@ end)
 rs.Heartbeat:connect(function()
     if blockantis == true and KO(OWNER).Value == true then
         Stop()
-        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-0.8,0)CFrame.Angles(math.pi*0,0,0)
+        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-0.7,0)CFrame.Angles(math.pi*0,0,0)
     elseif blockantis == true and KO(OWNER).Value == false then
         TWEEN(CFrame.new(0, 81, 0))
     end
