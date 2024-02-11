@@ -5496,6 +5496,12 @@ for i, v in next, game.Players.LocalPlayer.Character:GetChildren() do
 end
     end)
 
+    BT.AddButton("normar bat!",function()
+        game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").GripPos = Vector3.new(0, -2, 0)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").GripUp = Vector3.new(0, 1, 0)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").GripForward = Vector3.new(0,0,0)
+        game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").GripRight = Vector3.new(1, 0, 0)
+    end)
 BT.AddButton("dumbel bat!",function()
     local b = 2
     ----------------------------------------------------------------------------------------------
