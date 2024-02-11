@@ -1136,7 +1136,7 @@ tool.AddButton("push!",function()
         -- Change(ID)
         -- Call()
     
-        getgenv().sadfasfrfgrthrtyhj = 300
+        getgenv().sadfasfrfgrthrtyhj = 400
         getgenv().rthrthrthrjrt = 360
      
         game:GetService("RunService").heartbeat:Connect(function()
@@ -5639,7 +5639,7 @@ MIs.AddButton("anti stomp!",function()
     game.Players.LocalPlayer.Backpack["Combat"].Parent = game.Players.LocalPlayer.Character
     game.ReplicatedStorage.MainEvent:FireServer("ChargeButton")
     chat("walkpro!")
-    wait(5)
+    wait(3)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.Vdrtf32.Character.HumanoidRootPart.Position)*CFrame.new(0,3,0)
     wait(.2)
     game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
