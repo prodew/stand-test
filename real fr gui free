@@ -1169,6 +1169,221 @@ tool.AddButton("push!",function()
             game:GetService('Players').LocalPlayer.Character:WaitForChild('FULLY_LOADED_CHAR');
             kick()
     end)
+    tool.AddButton("jump scam!",function()
+        if not game['Loaded'] or not game:GetService('Players')['LocalPlayer'] then
+            game['Loaded']:Wait();
+            game:WaitForChild(game:GetService('Players'));
+            game:GetService('Players'):WaitForChild(game:GetService('Players').LocalPlayer.Name)
+        end
+        
+        TweenService = game:GetService("TweenService")
+        rs = game:GetService("RunService")
+        
+        function Ringtone(ID)
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+            local Tool = nil
+            if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+            Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+            game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+            game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Character
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+            local args = {
+                [1] = "RingTone",
+                [2] = ID
+                
+            }
+            game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Backpack
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+            if Tool ~= true then
+            if Tool then
+            Tool.Parent = game:GetService("Players").LocalPlayer.Character
+            end
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Play Sound 
+            game.Players:chat("/e cm")
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Stop Audio
+            function Stop()
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+            local Tool = nil
+            if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+            Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+            game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+            game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Character
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Backpack
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+            if Tool ~= true then
+            if Tool then
+            Tool.Parent = game:GetService("Players").LocalPlayer.Character
+            end
+            end
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Change Id
+            function Change(ID)
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+            local Tool = nil
+            if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+            Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+            game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+            game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Character
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+            local args = {
+                [1] = "RingTone",
+                [2] = ID
+                
+            }
+            game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Backpack
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+            if Tool ~= true then
+            if Tool then
+            Tool.Parent = game:GetService("Players").LocalPlayer.Character
+            end
+            end
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
+            function Call()
+            game.Players:chat("/e cm")
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
+            -- Ringtone(ID)
+            -- Stop()
+            -- Change(ID)
+            -- Call()
+        
+        
+        
+        if not game['Loaded'] or not game:GetService('Players')['LocalPlayer'] then
+            game['Loaded']:Wait();
+            game:WaitForChild(game:GetService('Players'));
+            game:GetService('Players'):WaitForChild(game:GetService('Players').LocalPlayer.Name)
+        end
+        if game.PlaceId == 2788229376 then
+        wait(4)
+        if not game['Loaded'] or not game:GetService('Players')['LocalPlayer'] then
+        game['Loaded']:Wait();
+        game:WaitForChild(game:GetService('Players'));
+        game:GetService('Players'):WaitForChild(game:GetService('Players').LocalPlayer.Name)
+        end
+        TweenService = game:GetService("TweenService")
+        rs = game:GetService("RunService")
+        local OriginalKeyUpValue = 0
+        function StopAudio()
+        if game:GetService("Players").LocalPlayer.Character.LowerTorso:FindFirstChild("BOOMBOXSOUND") then
+        game:GetService("Players").LocalPlayer.Character.LowerTorso.BOOMBOXSOUND:Stop()
+        end
+        end
+        function stop(ID, Key)
+        local cor = coroutine.wrap(function()
+        wait(game:GetService("Players").LocalPlayer.Character.LowerTorso.BOOMBOXSOUND.TimeLength-0.1)
+        if game:GetService("Players").LocalPlayer.Character.LowerTorso.BOOMBOXSOUND.SoundId == "rbxassetid://"..ID and OriginalKeyUpValue == Key then
+        StopAudio()
+        end
+        end)
+        cor()
+        end
+        function play(ID, STOP, LMAO)
+        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Boombox]") then
+        local Tool = nil
+        if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") and LMAO == true then
+        Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+        game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+        end
+        game:GetService("Players").LocalPlayer.Backpack["[Boombox]"].Parent =
+        game:GetService("Players").LocalPlayer.Character
+        game.ReplicatedStorage.MainEvent:FireServer("Boombox", ID)
+        game:GetService("Players").LocalPlayer.Character["[Boombox]"].RequiresHandle = false
+        if game:GetService("Players").LocalPlayer.Character["[Boombox]"]:FindFirstChild("Handle") then
+        game:GetService("Players").LocalPlayer.Character["[Boombox]"].Handle:Destroy()
+        end
+        game:GetService("Players").LocalPlayer.Character["[Boombox]"].Parent =
+        game:GetService("Players").LocalPlayer.Backpack
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.BoomboxFrame.Visible = false
+        if Tool ~= true then
+        if Tool then
+        Tool.Parent = game:GetService("Players").LocalPlayer.Character
+        end
+        end
+        if STOP == true then
+        game:GetService("Players").LocalPlayer.Character.LowerTorso:WaitForChild("BOOMBOXSOUND")
+        local cor = coroutine.wrap(function()
+        repeat wait() until game:GetService("Players").LocalPlayer.Character.LowerTorso.BOOMBOXSOUND.SoundId == "rbxassetid://"..ID and game:GetService("Players").LocalPlayer.Character.LowerTorso.BOOMBOXSOUND.TimeLength > 0.01
+        OriginalKeyUpValue = OriginalKeyUpValue+1
+        stop(ID, OriginalKeyUpValue)
+        end)
+        cor()
+        end
+        end
+        end
+        -------------------------------------------------------------
+        local LocalPlayer = game:GetService("Players").LocalPlayer
+            local Tool = Instance.new("Tool",LocalPlayer.Backpack)
+            local Mouse = LocalPlayer:GetMouse()
+            local OriginalKeyUpValue = 0
+            Tool.RequiresHandle = false
+            Tool.TextureId = "rbxassetid://9836076474"
+            Tool.ToolTip = "God?҉?҉ D』』a≋≋sh??̷?̷』』』』』̡̲͈̯͊"
+            Tool.Activated:Connect(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1000, 0)
+        wait(2.8)
+        local Animation = Instance.new("Animation")
+        Animation.AnimationId = "rbxassetid://3539706018"
+        local LoadAnimation = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):LoadAnimation(Animation)
+        LoadAnimation.Looped = false
+        LoadAnimation.Priority = Enum.AnimationPriority.Action
+        LoadAnimation:Play()
+        LoadAnimation:AdjustSpeed(6)
+        wait(0.4)
+        
+        Ringtone(165969964)
+        LoadAnimation:AdjustSpeed(0)
+        wait(2.4)
+        LoadAnimation:AdjustSpeed(5)
+        end)
+        elseif
+        game.PlaceId == 7213786345 then
+                local LocalPlayer = game:GetService("Players").LocalPlayer
+            local Tool = Instance.new("Tool",LocalPlayer.Backpack)
+            local Mouse = LocalPlayer:GetMouse()
+            local OriginalKeyUpValue = 0
+            Tool.RequiresHandle = false
+            Tool.TextureId = "rbxassetid://9836076474"
+            Tool.ToolTip = "God?҉?҉ D』』a≋≋sh??̷?̷』』』』』̡̲͈̯͊"
+            Tool.Activated:Connect(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1000, 0)
+        wait(2.8)
+        local Animation = Instance.new("Animation")
+        Animation.AnimationId = "rbxassetid://3539706018"
+        local LoadAnimation = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):LoadAnimation(Animation)
+        LoadAnimation.Looped = false
+        LoadAnimation.Priority = Enum.AnimationPriority.Action
+        LoadAnimation:Play()
+        LoadAnimation:AdjustSpeed(6)
+        wait(0.4)
+        
+        Ringtone(165969964)
+        LoadAnimation:AdjustSpeed(0)
+        wait(2.4)
+        LoadAnimation:AdjustSpeed(5)
+        end)
+                end
+            end)        
     tool.AddButton("pick up!",function()
         
              
