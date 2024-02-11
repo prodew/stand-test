@@ -42,11 +42,11 @@ gmt.__namecall =
         end)
 
 -- Chat Connect --
-local MainAccount = "zer1ckq" -- MainAccount Username
+local MainAccount = "dew103272101" -- MainAccount Username
 game.Players[MainAccount].Chatted:Connect(function(msg)
 if msg:lower() == "/e cm" then
 local A_1 = "PhoneCall"
-local A_2 = "zer1ckq"
+local A_2 = "dew103272101"
 local Event = game:GetService("ReplicatedStorage").MainEvent
 Event:FireServer(A_1, A_2)
 end
