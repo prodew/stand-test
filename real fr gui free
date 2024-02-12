@@ -564,112 +564,99 @@ tool.AddButton("Deflection combat!",function()
         -- Change(ID)
         -- Call()
         -- ReCall()
-        local Player = game.Players.LocalPlayer
         
-        local OriginalKeyUpValue = 0
+            --//Animations\\--
+            local Dodge1 = Instance.new('Animation', game.ReplicatedStorage)
+            Dodge1.AnimationId = 'rbxassetid://0'
+            local Dodge2 = Instance.new('Animation', game.ReplicatedStorage)
+            Dodge2.AnimationId = 'rbxassetid://0'
+            local Dodge3 = Instance.new('Animation', game.ReplicatedStorage)
+            Dodge3.AnimationId = 'rbxassetid://0'
+            --//Load Animations\\--
+            local d1 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Dodge1)
+            local d2 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Dodge2)
+            local d3 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Dodge3)
         
-        local Swing1 = Instance.new('Animation', game.ReplicatedStorage)
-        Swing1.AnimationId = 'rbxassetid://0'
         
-        local Swing2 = Instance.new('Animation', game.ReplicatedStorage)
-        Swing2.AnimationId = 'rbxassetid://0'
-        
-        local Swing3 = Instance.new('Animation', game.ReplicatedStorage)
-        Swing3.AnimationId = 'rbxassetid://0'
-        
-        local Swing4 = Instance.new('Animation', game.ReplicatedStorage)
-        Swing4.AnimationId = 'rbxassetid://0'
-        
-        local _1 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing1)
-        local _2 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing2)
-        local _3 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing3)
-        local _4 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing4)
-        
-        function StopAudio()
-            Player.Character.LowerTorso.BOOMBOXSOUND:Stop()
-        end
-        
-        function stop(ID, Key)
-            local cor = coroutine.wrap(function()
-                wait(Player.Character.LowerTorso.BOOMBOXSOUND.TimeLength-0.2)
-                if Player.Character.LowerTorso.BOOMBOXSOUND.SoundId == "rbxassetid://"..ID and OriginalKeyUpValue == Key then
-                    StopAudio()
-                end
+            local dodge = {
+            "Combat",
+            "[Knife]",
+            "[Nunchucks]",
+            "[Bat]",
+            "[Katana]",
+            "[StopSign]",
+            "[SledgeHammer]",
+            "[Pencil]",
+            "[Pitchfork]",
+            "[Shovel]"
+            }
+             
+            local function HasTool(tool)  
+            for i , v in pairs(dodge) do
+            if v == tool then 
+            return true 
+            end
+            end
+            end
+            local function IsInRage(player, distance)
+            if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            local positiondifference = (game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position - player.Character:FindFirstChild("HumanoidRootPart").Position).Magnitude
+            return positiondifference <= distance
+            end
+            return false
+            end
+            game:GetService("RunService"):BindToRenderStep("Spidersense", 0 , function()
+            for i , player in pairs(game.Players:GetChildren()) do 
+            if player ~= game.Players.LocalPlayer and IsInRage(player,6.5) then 
+            if player.Character and player.Character:FindFirstChildWhichIsA("Tool") and HasTool(player.Character:FindFirstChildWhichIsA("Tool").Name) and player.Character:FindFirstChild("BodyEffects"):FindFirstChild("Attacking").Value == true then
+            local Math = math.random(1,3)
+            if Math == 1 and not furrimode then
+            furrimode = true
+            if game.Players.LocalPlayer.Character.LowerTorso:FindFirstChild("PhoneRing") then
+            if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://231731980" then
+            ReCall()
+            else
+            Ringtone(7102498124)
+            end
+            end
+            ReCall()
+            d1:Play()
+            d2:Stop()
+            d3:Stop()
+            wait(0.77)
+            furrimode = false
+            elseif Math == 2 and not furrimode then
+            furrimode = true 
+            if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://231731980" then
+            ReCall()
+            else
+            Ringtone(7102498124)
+            end
+            ReCall()
+            d1:Stop()
+            d2:Play()
+            d3:Stop()
+            wait(0.77)
+            furrimode = false
+            else if Math == 3 and not furrimode then
+            furrimode = true
+            if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://231731980" then
+            ReCall()
+            else
+            Ringtone(7102498124)
+            end
+            d1:Stop()
+            d2:Stop()
+            d3:Play()
+            wait(0.77)
+            furrimode = false
+            end
+            end
+            end
+            end
+            end
             end)
-            cor()
-        end
         
-        function play(ID, STOP, LMAO)
-            if Player.Backpack:FindFirstChild("[Boombox]") then
-                local Tool = nil
-                if Player.Character:FindFirstChildOfClass("Tool") and LMAO == true then
-                    Tool = Player.Character:FindFirstChildOfClass("Tool")
-                    Player.Character:FindFirstChildOfClass("Tool").Parent = Player.Backpack
-                end
-                Player.Backpack["[Boombox]"].Parent =
-                    Player.Character
-                game.ReplicatedStorage.MainEvent:FireServer("Boombox", ID)
-                Player.Character["[Boombox]"].RequiresHandle = false
-                if Player.Character["[Boombox]"]:FindFirstChild("Handle") then
-                    Player.Character["[Boombox]"].Handle:Destroy()
-                end
-                Player.Character["[Boombox]"].Parent =
-                    Player.Backpack
-                Player.PlayerGui.MainScreenGui.BoomboxFrame.Visible = false
-                if Tool ~= true then
-                    if Tool then
-                        Tool.Parent = Player.Character
-                    end
-                end
-                if STOP == true then
-                    Player.Character.LowerTorso:WaitForChild("BOOMBOXSOUND")
-                    local cor = coroutine.wrap(function()
-                        repeat wait() until Player.Character.LowerTorso.BOOMBOXSOUND.SoundId == "rbxassetid://"..ID and Player.Character.LowerTorso.BOOMBOXSOUND.TimeLength > 0
-                        OriginalKeyUpValue = OriginalKeyUpValue+1
-                        stop(ID, OriginalKeyUpValue)
-                    end)
-                    cor()
-                end
-            end
-        end
-        
-        game.Workspace.Ignored.DescendantAdded:Connect(function(Ray)
-            if Ray:IsA('Attachment') then
-                local mag = (Player.Character.PrimaryPart.Position - Ray.WorldPosition).Magnitude
-                if mag <= 6 then
-                    local Math = math.random(1,4)
-                        if Math == 1 then
-                            _2:Stop()
-                            _3:Stop()
-                            _1:Play()
-                            _4:Stop()
-                            _1:AdjustSpeed(2.4)
-                            Ringtone(7674672480)
-                        elseif Math == 2 then
-                            _1:Stop()
-                            _3:Stop()
-                            _2:Play()
-                            _4:Stop()
-                            _2:AdjustSpeed(2.4)
-                            Ringtone(7674672480)
-                        elseif Math == 3 then
-                            _1:Stop()
-                            _2:Stop()
-                            _3:Play()
-                            _4:Stop()
-                            _3:AdjustSpeed(2.4)
-                            Ringtone(7674672480)
-                        elseif Math == 4 then
-                            _1:Stop()
-                            _2:Stop()
-                            _3:Stop()
-                            _4:Play()
-                            _4:AdjustSpeed(2.4)
-                            Ringtone(7674672480)
-                        end
-                end
-            end
-        end)
 end)
 tool.AddButton("bat real!",function()
     function Ringtone(ID)
