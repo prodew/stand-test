@@ -1156,7 +1156,7 @@ tool.AddButton("push!",function()
             game:GetService('Players').LocalPlayer.Character:WaitForChild('FULLY_LOADED_CHAR');
             kick()
         end)
-tool.AddButton("uppercut!",function()
+tool.AddButton("upper cut!",function()
     function Ringtone(ID)
         --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
         local Tool = nil
@@ -1265,7 +1265,7 @@ tool.AddButton("uppercut!",function()
             KIckAnim.AnimationId = "rbxassetid://3355740058";
                 tool = Instance.new("Tool")
                 tool.RequiresHandle = false
-                tool.Name = "uppercut 👆"
+                tool.Name = "upper cut"
                 tool.Activated:Connect(function()
                     game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
                 wait(0.1)
