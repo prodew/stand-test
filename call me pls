@@ -42,7 +42,7 @@ gmt.__namecall =
         end)
 
 -- Chat Connect --
-local MainAccount = "zer1ckq" -- MainAccount Username
+local MainAccount = "Vdrtf32" -- MainAccount Username
 game.Players[MainAccount].Chatted:Connect(function(msg)
 if msg:lower() == "/e cm" then
 local A_1 = "PhoneCall"
