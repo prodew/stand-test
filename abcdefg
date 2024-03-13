@@ -5647,6 +5647,24 @@ Diego.AddButton("fake animatoin A_Elder",function()
     Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=845396048"
     game.Players.LocalPlayer.Character.Humanoid.Jump = true
     end)
+    Diego.AddButton("fake animatoin A_Elder x zombie",function()
+        local Char = game.Players.LocalPlayer.Character
+        local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+        
+        for i,v in next, Hum:GetPlayingAnimationTracks() do
+            v:Stop()
+        end
+        wait(1)
+        local Animate = game.Players.LocalPlayer.Character.Animate
+        Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=845397899"
+        Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=845400520"
+        Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
+        Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+        Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616161997"
+        Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616156119"
+        Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616157476"
+        game.Players.LocalPlayer.Character.Humanoid.Jump = true
+        end)
 
 Diego.AddButton("fake animatoin zombie",function()
 local Char = game.Players.LocalPlayer.Character
