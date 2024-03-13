@@ -5479,36 +5479,6 @@ tool.AddButton("script TP AND LOL",function()
         Ringtone(265201042)--2738830850---265201042
         wait(0.1)
         Call()
-    elseif key == 'c' then
-        Ringtone(2674547670)
-        wait(0.1)
-        Call()
-        local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid;
-        Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
-        Humanoid.WalkSpeed = _G.WS;
-        end)
-        Humanoid.WalkSpeed = _G.WS;
-             wait(1)
-          _G.WS = "300";
-        local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid;
-        Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
-        Humanoid.WalkSpeed = _G.WS;
-        end)
-        Humanoid.WalkSpeed = _G.WS;
-        wait(3)
-        local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid;
-        Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
-        Humanoid.WalkSpeed = _G.WS;
-        end)
-        Humanoid.WalkSpeed = _G.WS;
-             wait(1)
-          _G.WS = "20";
-          Ringtone(186130717)
-        local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid;
-        Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
-        Humanoid.WalkSpeed = _G.WS;
-        end)
-        Humanoid.WalkSpeed = _G.WS;
     elseif key == 'z' then
         Ringtone(8080941676)
     end
