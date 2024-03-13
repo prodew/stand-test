@@ -499,10 +499,10 @@ tool.AddToggle("Hit Sense", false, function(t)
     game:GetService('RunService'):UnbindFromRenderStep("Spidersense")
     end
 end)
-tool.AddButton("Prass J for fling mode",function()
+tool.AddButton("Prass Q for fling mode",function()
     getgenv().toggle = false
 game:GetService("UserInputService").InputBegan:Connect(function(ea , retard)
-if ea.KeyCode == Enum.KeyCode.J and not retard then 
+if ea.KeyCode == Enum.KeyCode.Q and not retard then 
 getgenv().toggle = not getgenv().toggle
 if getgenv().toggle == true then 
     getgenv().loop = game:GetService("RunService").Heartbeat:Connect(function()
