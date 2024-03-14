@@ -61,7 +61,6 @@ game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.Ba
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/prodew/stand-test/main/no%20work%20fr'))()
 
 game.StarterGui:SetCore("SendNotification", {
 	Title = "Stop using my script"; 
