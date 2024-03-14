@@ -5815,6 +5815,34 @@ if not game.Players.LocalPlayer.Character:FindFirstChild("In-gameMask") then
   end
  end)
 
+ BT.AddButton("GUN(grippos)",function()
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,-7)
+    wait(.1)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[SMG]").GripPos = Vector3.new(0,-7,-7)
+    wait(.1)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Double-Barrel SG]").GripPos = Vector3.new(0,-7,-7)
+    wait(.1)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Revolver]").GripPos = Vector3.new(0,-7,-7)
+    wait(.1)
+end)
+BT.AddButton("LMG(grippos)",function()
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,-7)
+    wait(.1)
+end)
+BT.AddButton("SMG(grippos)",function()
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[SMG]").GripPos = Vector3.new(0,-7,-7)
+    wait(.1)
+end)
+BT.AddButton("Double(grippos)",function()
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Double-Barrel SG]").GripPos = Vector3.new(0,-7,-7)
+    wait(.1)
+end)
+BT.AddButton("Revolver(grippos)",function()
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Revolver]").GripPos = Vector3.new(0,-7,-7)
+    wait(.1)
+end)
+
+
 BT.AddButton("Double-Barrel Gun",function()
     local savepos = game.Players.LocalPlayer.Character.UpperTorso.Position
     local Brokie = workspace.Ignored.Shop["[Double-Barrel SG] - $1485"]
