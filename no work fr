@@ -1,8 +1,1 @@
-game.StarterGui:SetCore("SendNotification", {
-	Title = "Stop using my script"; 
-	Text = "script dew";
-    Text = "discrod deer14927";
-	Icon = "rbxassetid://16005965106";
-	Duration = 1;
-	})
-    wait(0.1)
+    game:GetService('ReplicatedStorage'):FindFirstChild('MainEvent'):FireServer('OneMoreTime')
