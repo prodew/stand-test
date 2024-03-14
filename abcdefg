@@ -499,7 +499,7 @@ tool.AddToggle("Hit Sense", false, function(t)
     game:GetService('RunService'):UnbindFromRenderStep("Spidersense")
     end
 end)
-tool.AddButton("Prass Q for fling mode",function()
+tool.AddButton("god spin prass Q",function()
     getgenv().toggle = false
 game:GetService("UserInputService").InputBegan:Connect(function(ea , retard)
 if ea.KeyCode == Enum.KeyCode.Q and not retard then 
@@ -3131,6 +3131,15 @@ tool.AddButton("one kick",function()
         end
     end)
 
+    game:GetService("RunService").heartbeat:Connect(function()
+        for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
+            if (v.Animation.AnimationId:match("rbxassetid://2809419094"))
+            or (v.animation.AnimationId:match("rbxassetid://2877910736"))
+            or (v.animation.AnimationId:match("rbxassetid://2809413000")) then
+                v:Stop()
+            end
+        end
+    end)
 
     function kick()
         local KIckAnim = Instance.new('Animation');
@@ -5608,7 +5617,7 @@ Diego.AddButton("fake animatoin A_Elder",function()
     Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=845396048"
     game.Players.LocalPlayer.Character.Humanoid.Jump = true
     end)
-    Diego.AddButton("fake animatoin A_Elder x zombie",function()
+    Diego.AddButton("fake animatoin zombie A_Elder",function()
         local Char = game.Players.LocalPlayer.Character
         local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
         
@@ -5806,29 +5815,29 @@ if not game.Players.LocalPlayer.Character:FindFirstChild("In-gameMask") then
   end
  end)
 BT.AddButton("GUN(grippos)",function()
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,-7)
     wait(.1)
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[SMG]").GripPos = Vector3.new(0,-7,7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[SMG]").GripPos = Vector3.new(0,-7,-7)
     wait(.1)
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[Double-Barrel SG]").GripPos = Vector3.new(0,-7,7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Double-Barrel SG]").GripPos = Vector3.new(0,-7,-7)
     wait(.1)
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[Revolver]").GripPos = Vector3.new(0,-7,7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Revolver]").GripPos = Vector3.new(0,-7,-7)
     wait(.1)
 end)
 BT.AddButton("LMG(grippos)",function()
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,-7)
     wait(.1)
 end)
 BT.AddButton("SMG(grippos)",function()
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[SMG]").GripPos = Vector3.new(0,-7,7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[SMG]").GripPos = Vector3.new(0,-7,-7)
     wait(.1)
 end)
 BT.AddButton("Double(grippos)",function()
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[Double-Barrel SG]").GripPos = Vector3.new(0,-7,)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Double-Barrel SG]").GripPos = Vector3.new(0,-7,-7)
     wait(.1)
 end)
 BT.AddButton("Revolver(grippos)",function()
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[Revolver]").GripPos = Vector3.new(0,7,0)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Revolver]").GripPos = Vector3.new(0,-7,-7)
     wait(.1)
 end)
 
@@ -6450,13 +6459,12 @@ MIs.AddButton("anti stomp work for me lol!",function()
     wait(.1)
     chat("walk!")
     wait(3)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-546, 173, 1)
     wait(.1)
     game.ReplicatedStorage.MainEvent:FireServer("ChargeButton")
     wait(.1)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.dahoodbotmoney5.character.HumanoidRootPart.Position)*CFrame.new(0,0,2)
     wait(3)
-    chat("weld!")
-    wait(1)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.dahoodbotmoney5.Character.HumanoidRootPart.Position)*CFrame.new(0,3,0)
     wait(.2)
     game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
@@ -6493,9 +6501,6 @@ end)
 
 MIs.AddButton("leave crew",function() 
     game.ReplicatedStorage.MainEvent:FireServer("LeaveCrew")
-    game.Players.LocalPlayer.Backpack["[SprayCan]"].Parent = game.Players.LocalPlayer.Character
-    wait(1)
-    game.Players.LocalPlayer.Character["[SprayCan]"]:Activate()
 end)
 MIs.AddButton("join crew",function() 
     game.ReplicatedStorage.MainEvent:FireServer("JoinCrew",32570691) 
@@ -6588,30 +6593,48 @@ game.Players.LocalPlayer.CharacterAdded:connect(function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = "rbxassetid://11767037107"
     game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.ImageColor3 = Color3.fromRGB(255, 255, 255)
     game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-
+    
+    spawn(function()
+        game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
+        wait(1)
+        local H_1 = Instance.new("Highlight")
+        H_1.Parent = game.Players.LocalPlayer.Character
+        H_1.FillColor = Color3.new(0,0,0)
+        H_1.OutlineColor = Color3.new(255,255,255)
+        H_1.FillTransparency = 0.9
+        H_1.OutlineTransparency = 0.75
+        wait(0.1)
+        local a = Instance.new("StringValue")
+        a.Parent = game.Players.LocalPlayer.Character.BodyEffects.Movement
+        a.Name = "FastSprint"
+        
+        game:GetService('RunService'):BindToRenderStep("fr", 0 , function()
+        game.Players.LocalPlayer.Character.Humanoid.Health = 100
+        end)
+        end)
 
 
 end)
 
 
---spawn(function()
-  --  game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
- --   wait(1)
-  --  local H_1 = Instance.new("Highlight")
-  --  H_1.Parent = game.Players.LocalPlayer.Character
-  --  H_1.FillColor = Color3.new(0,0,0)
-  --  H_1.OutlineColor = Color3.new(255,255,255)
-   -- H_1.FillTransparency = 0.9
-   -- H_1.OutlineTransparency = 0.75
-  --  wait(0.1)
-  --  local a = Instance.new("StringValue")
-  --  a.Parent = game.Players.LocalPlayer.Character.BodyEffects.Movement
-  --  a.Name = "FastSprint"
+spawn(function()
+    game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
+    wait(1)
+    local H_1 = Instance.new("Highlight")
+    H_1.Parent = game.Players.LocalPlayer.Character
+    H_1.FillColor = Color3.new(0,0,0)
+    H_1.OutlineColor = Color3.new(255,255,255)
+    H_1.FillTransparency = 0.9
+    H_1.OutlineTransparency = 0.75
+    wait(0.1)
+    local a = Instance.new("StringValue")
+    a.Parent = game.Players.LocalPlayer.Character.BodyEffects.Movement
+    a.Name = "FastSprint"
     
- --   game:GetService('RunService'):BindToRenderStep("fr", 0 , function()
-  --  game.Players.LocalPlayer.Character.Humanoid.Health = 100
-  --  end)
-   -- end)
+    game:GetService('RunService'):BindToRenderStep("fr", 0 , function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 100
+    end)
+    end)
 
 
 
