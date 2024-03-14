@@ -3131,16 +3131,6 @@ tool.AddButton("one kick",function()
         end
     end)
 
-    game:GetService("RunService").heartbeat:Connect(function()
-        for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
-            if (v.Animation.AnimationId:match("rbxassetid://2809419094"))
-            or (v.animation.AnimationId:match("rbxassetid://2809419094"))
-            or (v.animation.AnimationId:match("rbxassetid://2877910736"))
-            or (v.animation.AnimationId:match("rbxassetid://2809413000")) then
-                v:Stop()
-            end
-        end
-    end)
 
     function kick()
         local KIckAnim = Instance.new('Animation');
@@ -5816,29 +5806,29 @@ if not game.Players.LocalPlayer.Character:FindFirstChild("In-gameMask") then
   end
  end)
 BT.AddButton("GUN(grippos)",function()
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,-7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,0)
     wait(.1)
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[SMG]").GripPos = Vector3.new(0,-7,-7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[SMG]").GripPos = Vector3.new(0,-7,0)
     wait(.1)
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[Double-Barrel SG]").GripPos = Vector3.new(0,-7,-7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Double-Barrel SG]").GripPos = Vector3.new(0,-7,0)
     wait(.1)
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[Revolver]").GripPos = Vector3.new(0,-7,-7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Revolver]").GripPos = Vector3.new(0,-7,0)
     wait(.1)
 end)
 BT.AddButton("LMG(grippos)",function()
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,-7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,0)
     wait(.1)
 end)
 BT.AddButton("SMG(grippos)",function()
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[SMG]").GripPos = Vector3.new(0,-7,-7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[SMG]").GripPos = Vector3.new(0,-7,0)
     wait(.1)
 end)
 BT.AddButton("Double(grippos)",function()
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[Double-Barrel SG]").GripPos = Vector3.new(0,-7,-7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Double-Barrel SG]").GripPos = Vector3.new(0,-7,0)
     wait(.1)
 end)
 BT.AddButton("Revolver(grippos)",function()
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[Revolver]").GripPos = Vector3.new(0,-7,-7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Revolver]").GripPos = Vector3.new(0,-7,0)
     wait(.1)
 end)
 
