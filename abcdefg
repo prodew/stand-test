@@ -3134,7 +3134,7 @@ tool.AddButton("one kick",function()
     game:GetService("RunService").heartbeat:Connect(function()
         for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
             if (v.Animation.AnimationId:match("rbxassetid://2809419094"))
-            or (v.animatoin.AnimationId:match("rbxassetid://2809419094"))
+            or (v.animation.AnimationId:match("rbxassetid://2809419094"))
             or (v.animation.AnimationId:match("rbxassetid://2877910736"))
             or (v.animation.AnimationId:match("rbxassetid://2809413000")) then
                 v:Stop()
