@@ -1492,7 +1492,7 @@ tool.AddButton("push!",function()
                         tool.Name = "throw"
                         tool.Activated:Connect(function()
                             game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
-                            wait(0.6)
+                            wait(0.4)
                             game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
                         end)
                         tool.Parent = game.Players.LocalPlayer.Backpack
