@@ -1536,7 +1536,7 @@ tool.AddButton("push!",function()
                         tool.Name = "throw"
                         tool.Activated:Connect(function()
                             game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
-                            wait(0.4)
+                            wait(0.55)
                             game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
                         end)
                         tool.Parent = game.Players.LocalPlayer.Backpack
@@ -1749,6 +1749,90 @@ tool.AddButton("laugh",function()
         wait(0.1)
     game.Players:chat("/e laugh")
     end
+    end)
+end)
+tool.AddButton(" grab segv3", function()
+    local LocalPlayer = game.Players.LocalPlayer
+    local Character = LocalPlayer.Character
+    
+    local IM = game:GetService("ReplicatedStorage").IM.ANIM
+    
+    local PlayersChar = workspace.Players
+    
+    if _G.JOINTWATCHER then
+        _G.JOINTWATCHER:Disconnect()
+    end
+    
+    local function Align(P0, P1, P, R)
+        local A0, A1 = Instance.new("Attachment", P0), Instance.new("Attachment", P1)
+        
+        local AP, AO = Instance.new("AlignPosition", P0), Instance.new("AlignOrientation", P0)
+        
+        A1.Position = P
+        A0.Rotation = R
+        
+        AP.RigidityEnabled = true
+        AP.Responsiveness = 200
+        AP.Attachment0 = A0
+        AP.Attachment1 = A1
+        
+        AO.MaxTorque = 9e9
+        AO.Responsiveness = 200
+        AO.RigidityEnabled = true
+        AO.Attachment0 = A0
+        AO.Attachment1 = A1
+        
+        return A0, A1, AP, A0
+    end
+    
+    _G.JOINTWATCHER = PlayersChar.DescendantAdded:Connect(function(Ins)
+        if Ins:IsA("Weld") and Ins.Name == "GRABBING_CONSTRAINT" then
+            repeat task.wait() until Ins.Part0 ~= nil
+            repeat task.wait() until Ins:FindFirstChildOfClass("RopeConstraint")
+            
+            local AT0, AT1, AP, A0
+            
+            if Ins.Part0:IsDescendantOf(LocalPlayer.Character) then
+                Ins:FindFirstChildOfClass("RopeConstraint").Length = 9e9
+                
+                Character.Animate.Disabled = true
+                
+                for _, Anim in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
+                    Anim:Stop()
+                end
+                
+                Character.Animate.Disabled = false
+                
+                Character.Humanoid:LoadAnimation(IM.RightAim):Play()
+                Character.Humanoid:LoadAnimation(IM.LeftAim):Play()
+                
+                AT0, AT1, AP, A0 = Align(Ins.Parent.UpperTorso, LocalPlayer.Character.UpperTorso, Vector3.new(0, 0, 10), Vector3.new(90, 545, 0))
+                
+                spawn(function()
+                    while Ins.Parent ~= nil do
+                        task.wait()
+                        local Sine = tick() * 60
+                        
+                        AT1.Position = Vector3.new(0, -1.2, -10 + 1 * math.sin(Sine / 8))
+                    end
+                end)
+            end
+            
+            repeat task.wait() until Ins.Parent == nil
+            
+            Character.Animate.Disabled = true
+                
+        for _, Anim in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
+            Anim:Stop()
+        end
+        
+        Character.Animate.Disabled = false
+            
+            AT0:Destroy()
+            AT1:Destroy()
+            AP:Destroy()
+            A0:Destroy()
+        end
     end)
 end)
 tool.AddButton(" grab segv2", function()
@@ -6504,7 +6588,6 @@ MIs.AddButton("anti stomp work for me lol!",function()
     wait(.1)
     chat("walk!")
     wait(3)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-546, 173, 1)
     wait(.1)
     game.ReplicatedStorage.MainEvent:FireServer("ChargeButton")
     wait(.1)
