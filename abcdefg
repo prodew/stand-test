@@ -6493,7 +6493,10 @@ dance.AddButton("Point", function()
 end)
 dance.AddButton("Wave", function()
     Ringtone(8284260932)
-    game.Players:chat("/e wave")
+    local DefaultDanceanim = Instance.new('Animation');
+    DefaultDanceanim.AnimationId = "rbxassetid://10714378156";
+    game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(DefaultDanceanim):Play()
+    DefaultDanceanim.Looped = false
 end)
 dance.AddButton("DefaultDance", function()
     local DefaultDanceanim = Instance.new('Animation');
