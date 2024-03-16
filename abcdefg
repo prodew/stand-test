@@ -6500,6 +6500,16 @@ dance.AddButton("DefaultDance", function()
     DefaultDanceanim.AnimationId = "rbxassetid://11710529975";
     game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(DefaultDanceanim):Play()
 end)
+dance.AddButton("BLACKPINK Dance", function()
+    local DefaultDanceanim = Instance.new('Animation');
+    DefaultDanceanim.AnimationId = "rbxassetid://14548621256";
+    game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(DefaultDanceanim):Play()
+end)
+dance.AddButton("BLACKPINK Dance V2", function()
+    local DefaultDanceanim = Instance.new('Animation');
+    DefaultDanceanim.AnimationId = "rbxassetid://14548619594";
+    game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(DefaultDanceanim):Play()
+end)
 scary.AddButton("Ahh?!",function()
     Ringtone(6073433216)
     wait(0.1)
