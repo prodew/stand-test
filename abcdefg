@@ -5899,15 +5899,6 @@ if not game.Players.LocalPlayer.Character:FindFirstChild("In-gameMask") then
        New.Parent = game.Players.LocalPlayer.Backpack
   end
  end)
-BT.AddButton("buy bat", function()
-    getgenv().pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    repeat wait()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Bat] - $265"].Head.CFrame * CFrame.new(0,-5,0)
-        fireclickdetector(game.Workspace.Ignored.Shop["[Bat] - $265"].ClickDetector)
-        wait(000000000000.1)
-    until game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]")
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getgenv().pos
-end)
 
  BT.AddButton("GUN(grippos)",function()
     game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,-7)
