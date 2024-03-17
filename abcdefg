@@ -513,7 +513,7 @@ if getgenv().toggle == true then
     game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = currentvel
     end)
     getgenv().loop2 = game:GetService("RunService").RenderStepped:Connect(function()
-    game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 35
+    game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 50
     end)
 end
 
