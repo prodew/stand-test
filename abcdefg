@@ -1493,7 +1493,7 @@ tool.AddButton("push!",function()
                         tool.Name = "throw"
                         tool.Activated:Connect(function()
                             game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
-                            wait(0.4)
+                            wait(0.5)
                             game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
                         end)
                         tool.Parent = game.Players.LocalPlayer.Backpack
@@ -1502,7 +1502,7 @@ tool.AddButton("push!",function()
                     game:GetService('Players').LocalPlayer.Character:WaitForChild('FULLY_LOADED_CHAR');
                     kick()
                 
-                    getgenv().POWERFLING = 800
+                    getgenv().POWERFLING = 400
                     getgenv().rthrthrthrjrt = 400
                  
                 
