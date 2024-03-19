@@ -485,11 +485,11 @@ tool.AddToggle("Hit Sense", false, function(t)
     
         --//Animations\\--
         local Dodge1 = Instance.new('Animation', game.ReplicatedStorage)
-        Dodge1.AnimationId = 'rbxassetid://8254787838'
+        Dodge1.AnimationId = 'rbxassetid://0'
         local Dodge2 = Instance.new('Animation', game.ReplicatedStorage)
-        Dodge2.AnimationId = 'rbxassetid://8254789608'
+        Dodge2.AnimationId = 'rbxassetid://0'
         local Dodge3 = Instance.new('Animation', game.ReplicatedStorage)
-        Dodge3.AnimationId = 'rbxassetid://8254792138'
+        Dodge3.AnimationId = 'rbxassetid://0'
         --//Load Animations\\--
         local d1 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Dodge1)
         local d2 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Dodge2)
@@ -532,8 +532,10 @@ tool.AddToggle("Hit Sense", false, function(t)
         furrimode = true
         if game.Players.LocalPlayer.Character.LowerTorso:FindFirstChild("PhoneRing") then
         if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://5909720414" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         ReCall()
         else
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         Ringtone(5909720414)
         end
         end
@@ -546,8 +548,10 @@ tool.AddToggle("Hit Sense", false, function(t)
         elseif Math == 2 and not furrimode then
         furrimode = true 
         if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://5909720414" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         ReCall()
         else
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         Ringtone(5909720414)
         end
         ReCall()
@@ -559,8 +563,10 @@ tool.AddToggle("Hit Sense", false, function(t)
         else if Math == 3 and not furrimode then
         furrimode = true
         if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://5909720414" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         ReCall()
         else
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         Ringtone(5909720414)
         end
         d1:Stop()
