@@ -4,6 +4,6 @@ game.StarterGui:SetCore("SendNotification", {
 	Text = "script dew";
     Text = "discrod deer14927";
 	Icon = "rbxassetid://16005920171";
-	Duration = 1;
+	Duration = 60;
 	})
     wait(0.1)
