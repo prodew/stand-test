@@ -443,9 +443,13 @@ tool.AddToggle("Hit Sense", false, function(t)
         furrimode = true
         if game.Players.LocalPlayer.Character.LowerTorso:FindFirstChild("PhoneRing") then
         if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://3280066384" then
+            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
+            wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         ReCall()
         else
+            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
+            wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         Ringtone(3280066384)
         end
@@ -459,9 +463,13 @@ tool.AddToggle("Hit Sense", false, function(t)
         elseif Math == 2 and not furrimode then
         furrimode = true 
         if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://3280066384" then
+            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
+            wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         ReCall()
         else
+            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
+            wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         Ringtone(3280066384)
         end
@@ -474,9 +482,13 @@ tool.AddToggle("Hit Sense", false, function(t)
         else if Math == 3 and not furrimode then
         furrimode = true
         if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://3280066384" then
+            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
+            wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         ReCall()
         else
+            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
+            wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         Ringtone(3280066384)
         end
