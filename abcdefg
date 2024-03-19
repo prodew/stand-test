@@ -5786,6 +5786,25 @@ tool.AddButton("script TP AND LOL",function()
     end)
 end)
 --//------------------------------------------------------------------------------------------\\-- DIEGO
+Diego.AddButton("fake animatoin dahood ",function()
+    local Char = game.Players.LocalPlayer.Character
+    local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+    
+    for i,v in next, Hum:GetPlayingAnimationTracks() do
+        v:Stop()
+    end
+    wait(1)
+    local Animate = game.Players.LocalPlayer.Character.Animate
+    Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=3119980985"
+    Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=3119980985"
+    Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=707897309"
+    Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=2791325054"
+    Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=707853694"
+    Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=3135793091"
+    Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=2791328524"
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true   
+    
+end)
 Diego.AddButton("fake animatoin MEGA ",function()
     local Char = game.Players.LocalPlayer.Character
 local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
@@ -6724,12 +6743,6 @@ end)
 dance.AddButton("BLACKPINK Dance V2", function()
     local DefaultDanceanim = Instance.new('Animation');
     DefaultDanceanim.AnimationId = "rbxassetid://14548619594";
-    game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(DefaultDanceanim):Play()
-end)
-dance.AddButton("supercharge", function()
-    Ringtone(1081581251)
-    local DefaultDanceanim = Instance.new('Animation');
-    DefaultDanceanim.AnimationId = "rbxassetid://10478338114";
     game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(DefaultDanceanim):Play()
 end)
 scary.AddButton("Ahh?!",function()
