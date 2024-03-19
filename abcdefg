@@ -6728,7 +6728,7 @@ dance.AddButton("Point", function()
 end)
 dance.AddButton("Wave", function()
     Ringtone(8284260932)
-    game.Players:chat("/e point")chat("/e wave")
+    game.Players:chat("/e wave")
 end)
 dance.AddButton("DefaultDance", function()
     local DefaultDanceanim = Instance.new('Animation');
