@@ -387,21 +387,6 @@ tool.AddToggle("auto reload", false, function(p)
         game:GetService('RunService'):UnbindFromRenderStep("Auto-Reload")
     end
 end)
-tool.AddToggle("auto block", false, function(p2)
-    if p2 == true then
-        game:GetService('RunService'):BindToRenderStep("Auto-Reload2", 0 , function()
-            if game.Players.LocalPlayer.Character.BodyEffects:FindFirstChild('Block') then
-                game.Players.LocalPlayer.Character.BodyEffects.Block:Destroy()
-            end
-            game.ReplicatedStorage.MainEvent:FireServer("Block",true) wait()
-            game.ReplicatedStorage.MainEvent:FireServer("Block",false)
-
-        end)
-    elseif p2 == false then
-        game:GetService('RunService'):UnbindFromRenderStep("Auto-Reload2")
-    end
-end)
-
 tool.AddToggle("Hit Sense", false, function(t)
     if t == true then
     function Ringtone(ID)
@@ -500,11 +485,11 @@ tool.AddToggle("Hit Sense", false, function(t)
     
         --//Animations\\--
         local Dodge1 = Instance.new('Animation', game.ReplicatedStorage)
-        Dodge1.AnimationId = 'rbxassetid://1'
+        Dodge1.AnimationId = 'rbxassetid://8254787838'
         local Dodge2 = Instance.new('Animation', game.ReplicatedStorage)
-        Dodge2.AnimationId = 'rbxassetid://5'
+        Dodge2.AnimationId = 'rbxassetid://8254789608'
         local Dodge3 = Instance.new('Animation', game.ReplicatedStorage)
-        Dodge3.AnimationId = 'rbxassetid://4'
+        Dodge3.AnimationId = 'rbxassetid://8254792138'
         --//Load Animations\\--
         local d1 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Dodge1)
         local d2 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Dodge2)
@@ -547,12 +532,8 @@ tool.AddToggle("Hit Sense", false, function(t)
         furrimode = true
         if game.Players.LocalPlayer.Character.LowerTorso:FindFirstChild("PhoneRing") then
         if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://5909720414" then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
-            wait(2.8)
         ReCall()
         else
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
-            wait(2.8)
         Ringtone(5909720414)
         end
         end
@@ -565,12 +546,8 @@ tool.AddToggle("Hit Sense", false, function(t)
         elseif Math == 2 and not furrimode then
         furrimode = true 
         if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://5909720414" then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
-            wait(2.8)
         ReCall()
         else
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
-            wait(2.8)
         Ringtone(5909720414)
         end
         ReCall()
@@ -582,12 +559,8 @@ tool.AddToggle("Hit Sense", false, function(t)
         else if Math == 3 and not furrimode then
         furrimode = true
         if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://5909720414" then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1000, 0)
-            wait(2.8)
         ReCall()
         else
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1000, 0)
-            wait(2.8)
         Ringtone(5909720414)
         end
         d1:Stop()
