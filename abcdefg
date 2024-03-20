@@ -6821,6 +6821,102 @@ end)
 MIs.AddButton("reset!",function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-475, 24, -647)
 end)
+MIs.AddButton("real no head!",function()
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
+    task.wait()
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(16)
+    task.wait()
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(0)
+    
+    repeat game:GetService("RunService").stepped:Wait() until game.Players.LocalPlayer.Character.BodyEffects["K.O"].Value == false
+    local Neck = Instance.new("Motor6D");
+    Neck.Name = "Neck";
+    Neck.Parent = game:GetService("Players").LocalPlayer.Character.Head;
+    Neck.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    Neck.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    Neck.Part0 = game:GetService("Players").LocalPlayer.Character.UpperTorso;
+    Neck.Part1 = game:GetService("Players").LocalPlayer.Character.Head;
+    
+    local rightwrist = Instance.new("Motor6D");
+    rightwrist.Name = "RightWrist";
+    rightwrist.Parent = game:GetService("Players").LocalPlayer.Character.RightHand;
+    rightwrist.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    rightwrist.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    rightwrist.Part0 = game:GetService("Players").LocalPlayer.Character.RightLowerArm;
+    rightwrist.Part1 = game:GetService("Players").LocalPlayer.Character.RightHand;
+    
+    local leftwrist = Instance.new("Motor6D");
+    leftwrist.Name = "LeftWrist";
+    leftwrist.Parent = game:GetService("Players").LocalPlayer.Character.LeftHand;
+    leftwrist.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    leftwrist.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    leftwrist.Part0 = game:GetService("Players").LocalPlayer.Character.LeftLowerArm;
+    leftwrist.Part1 = game:GetService("Players").LocalPlayer.Character.LeftHand;
+    
+    local RightAnkle = Instance.new("Motor6D");
+    RightAnkle.Name = "RightAnkle";
+    RightAnkle.Parent = game:GetService("Players").LocalPlayer.Character.RightFoot;
+    RightAnkle.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    RightAnkle.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    RightAnkle.Part0 = game:GetService("Players").LocalPlayer.Character.RightLowerLeg;
+    RightAnkle.Part1 = game:GetService("Players").LocalPlayer.Character.RightFoot;
+    
+    local LeftAnkle = Instance.new("Motor6D");
+    LeftAnkle.Name = "LeftAnkle";
+    LeftAnkle.Parent = game:GetService("Players").LocalPlayer.Character.LeftFoot;
+    LeftAnkle.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    LeftAnkle.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    LeftAnkle.Part0 = game:GetService("Players").LocalPlayer.Character.LeftLowerLeg;
+    LeftAnkle.Part1 = game:GetService("Players").LocalPlayer.Character.LeftFoot;
+    end)
+    MIs.AddButton("real no head! freeze leg",function()
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
+    task.wait()
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(16)
+    task.wait()
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(0)
+    
+    repeat game:GetService("RunService").stepped:Wait() until game.Players.LocalPlayer.Character.BodyEffects["K.O"].Value == false
+    local Neck = Instance.new("Motor6D");
+    Neck.Name = "Neck";
+    Neck.Parent = game:GetService("Players").LocalPlayer.Character.Head;
+    Neck.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    Neck.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    Neck.Part0 = game:GetService("Players").LocalPlayer.Character.UpperTorso;
+    Neck.Part1 = game:GetService("Players").LocalPlayer.Character.Head;
+    
+    local rightwrist = Instance.new("Motor6D");
+    rightwrist.Name = "RightWrist";
+    rightwrist.Parent = game:GetService("Players").LocalPlayer.Character.RightHand;
+    rightwrist.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    rightwrist.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    rightwrist.Part0 = game:GetService("Players").LocalPlayer.Character.RightLowerArm;
+    rightwrist.Part1 = game:GetService("Players").LocalPlayer.Character.RightHand;
+    
+    local leftwrist = Instance.new("Motor6D");
+    leftwrist.Name = "LeftWrist";
+    leftwrist.Parent = game:GetService("Players").LocalPlayer.Character.LeftHand;
+    leftwrist.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    leftwrist.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    leftwrist.Part0 = game:GetService("Players").LocalPlayer.Character.LeftLowerArm;
+    leftwrist.Part1 = game:GetService("Players").LocalPlayer.Character.LeftHand;
+    
+    local RightAnkle = Instance.new("Motor6D");
+    RightAnkle.Name = "RightAnkle";
+    RightAnkle.Parent = game:GetService("Players").LocalPlayer.Character.RightFoot;
+    RightAnkle.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    RightAnkle.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    RightAnkle.Part0 = game:GetService("Players").LocalPlayer.Character.RightLowerLeg;
+    RightAnkle.Part1 = game:GetService("Players").LocalPlayer.Character.RightFoot;
+    
+    local LeftAnkle = Instance.new("Motor6D");
+    LeftAnkle.Name = "LeftAnkle";
+    LeftAnkle.Parent = game:GetService("Players").LocalPlayer.Character.LeftFoot;
+    LeftAnkle.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    LeftAnkle.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    LeftAnkle.Part0 = game:GetService("Players").LocalPlayer.Character.LeftLowerLeg;
+    LeftAnkle.Part1 = game:GetService("Players").LocalPlayer.Character.LeftFoot;
+    end)
     
 --------------------------------------------------------------------------------------------------------------------  
 
