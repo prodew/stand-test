@@ -2203,6 +2203,7 @@ tool.AddButton("Neck Grab v2", function()
             end
         end)
         end)
+
         tool.AddButton("foot Grab v1", function()
             local LocalPlayer = game.Players.LocalPlayer
             local Character = LocalPlayer.Character
@@ -5727,6 +5728,24 @@ Diego.AddButton("fake animatoin dahood ",function()
     game.Players.LocalPlayer.Character.Humanoid.Jump = true   
     
 end)
+Diego.AddButton("fake animatoin bold ",function()
+    local Char = game.Players.LocalPlayer.Character
+    local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+    
+    for i,v in next, Hum:GetPlayingAnimationTracks() do
+        v:Stop()
+    end
+    wait(1)
+    local Animate = game.Players.LocalPlayer.Character.Animate
+    Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=16738333868"
+    Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=16738334710"
+    Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=16738340646"
+    Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=16738337225"
+    Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=16738336650"
+    Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=16738332169"
+    Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=16738333171"
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
 Diego.AddButton("fake animatoin MEGA ",function()
     local Char = game.Players.LocalPlayer.Character
 local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
@@ -6865,7 +6884,6 @@ game.Players.LocalPlayer.CharacterAdded:connect(function()
 
 
 end)
-
 
 
 
