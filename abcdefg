@@ -6885,21 +6885,6 @@ MIs.AddButton("real no head!",function()
     Neck.Part0 = game:GetService("Players").LocalPlayer.Character.UpperTorso;
     Neck.Part1 = game:GetService("Players").LocalPlayer.Character.Head;
     
-    local rightwrist = Instance.new("Motor6D");
-    rightwrist.Name = "RightWrist";
-    rightwrist.Parent = game:GetService("Players").LocalPlayer.Character.RightHand;
-    rightwrist.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
-    rightwrist.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
-    rightwrist.Part0 = game:GetService("Players").LocalPlayer.Character.RightLowerArm;
-    rightwrist.Part1 = game:GetService("Players").LocalPlayer.Character.RightHand;
-    
-    local leftwrist = Instance.new("Motor6D");
-    leftwrist.Name = "LeftWrist";
-    leftwrist.Parent = game:GetService("Players").LocalPlayer.Character.LeftHand;
-    leftwrist.C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
-    leftwrist.C1 = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
-    leftwrist.Part0 = game:GetService("Players").LocalPlayer.Character.LeftLowerArm;
-    leftwrist.Part1 = game:GetService("Players").LocalPlayer.Character.LeftHand;
     
     local RightAnkle = Instance.new("Motor6D");
     RightAnkle.Name = "RightAnkle";
