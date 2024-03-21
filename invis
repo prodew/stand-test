@@ -1,0 +1,581 @@
+--- "How to use it?" Get your alt and knock your acc u wanna use it on normal carry your account and basically PRESS "TURN INVISIBLE" AND BOOOM
+--- "How does Car Work?" Go to foodcar sit in the front seat (not the one you can drive it with) when you sit in it press "Activate car" and then do your settings ed
+-- cri
+
+
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/twink"))()
+
+local MainUI = UILibrary.Load("cri")
+local CarPage = MainUI.AddPage("Car")
+local InvisiblePage = MainUI.AddPage("Invisible")
+assert(getrawmetatable)
+gmt = getrawmetatable(game)
+setreadonly(gmt, false)
+old = gmt.__namecall
+gmt.__namecall =
+	newcclosure(
+		function(self, ...)
+		local args = {...}
+		if tostring(args[1]) == "BreathingHAMON" then
+			return
+		elseif tostring(args[1]) == "TeleportDetect" then
+			return
+		elseif tostring(args[1]) == "CHECKER_1" then
+			return
+		elseif tostring(args[1]) == "CHECKER" then
+			return
+		elseif tostring(args[1]) == "GUI_CHECK" then
+			return
+		elseif tostring(args[1]) == "OneMoreTime" then
+			return
+		elseif tostring(args[1]) == "checkingSPEED" then
+			return
+		elseif tostring(args[1]) == "BANREMOTE" then
+			return
+		elseif tostring(args[1]) == "PERMAIDBAN" then
+			return
+		elseif tostring(args[1]) == "KICKREMOTE" then
+			return
+		elseif tostring(args[1]) == "BR_KICKPC" then
+			return end
+
+		return old(self, ...)
+	end)
+
+local function gplr(String)
+	local Found = {}
+	local strl = String:lower()
+	if strl == "all" then
+		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+			table.insert(Found,v)
+		end
+	elseif strl == "others" then
+		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+			if v.Name ~= lp.Name then
+				table.insert(Found,v)
+			end
+		end 
+	elseif strl == "me" then
+		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+			if v.Name == lp.Name then
+				table.insert(Found,v)
+			end
+		end 
+	else
+		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+			if v.Name:lower():sub(1, #String) == String:lower() then
+				table.insert(Found,v)
+			end
+		end 
+	end
+	return Found 
+end
+
+-- // TOGGLE!
+
+local Mouse = game.Players.LocalPlayer:GetMouse()
+local Closed = true
+Mouse.KeyDown:connect(function(key)
+ 
+if key == "v" then
+if Closed == true then
+    Closed = false
+        game.CoreGui["cri"].Enabled = false
+    else
+        Closed = true
+            game.CoreGui["cri"].Enabled = true
+        end
+    end
+end)
+
+--//------------------------------------------------------------------------------------------\\--
+    local Speed = 20
+    local RigWalk = nil
+    local RigIdle = nil
+    local Invisible = false
+    local WalkSpeed = false
+    local LocalPlayer = game.Players.LocalPlayer 
+    local OldChar = LocalPlayer.Character
+    local Fling = false
+    local Fling2 = false
+    local WalkAnimation = Instance.new("Animation", game.ReplicatedStorage.ClientAnimations)
+    WalkAnimation.AnimationId = "rbxassetid://10921076136"
+    local Idle = Instance.new("Animation", game.ReplicatedStorage.ClientAnimations)
+    Idle.AnimationId = "rbxassetid://10921071918"
+
+    function AddVelocity(Vel, Char)
+    Char.HumanoidRootPart.Velocity = Char.HumanoidRootPart.Velocity+Vel
+    end
+    
+    
+    
+function ModelCharacter()
+if workspace:FindFirstChild(LocalPlayer.Name.."StringKOD") == nil then
+
+game:GetService('RunService'):BindToRenderStep("FFF", 0 , function()
+game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
+game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+end)
+
+local MODEL = Instance.new("Model", workspace)
+MODEL.Name = LocalPlayer.Name.."StringKOD"
+OldChar.Humanoid:UnequipTools()
+local NewCharacter = game:GetObjects("rbxassetid://9804907350")[1]
+local OldCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+NewCharacter.Parent = MODEL
+NewCharacter.Name = "Idaro"
+workspace.Camera.CameraSubject = NewCharacter.Humanoid
+Invisible = true
+NewCharacter.HumanoidRootPart.CFrame = OldCFrame
+RigIdle = NewCharacter:WaitForChild("Humanoid"):LoadAnimation(Idle)
+RigIdle.Looped = true
+RigIdle.Priority = Enum.AnimationPriority.Action
+RigWalk = NewCharacter:WaitForChild("Humanoid"):LoadAnimation(WalkAnimation)
+RigWalk.Looped = true
+RigWalk.Priority = Enum.AnimationPriority.Action
+WalkSpeed = true
+RigIdle:Play()
+else
+game:GetService('RunService'):UnbindFromRenderStep("FFF")
+Invisible = false
+WalkSpeed = false
+workspace.Camera.CameraSubject =  OldChar.Humanoid
+OldChar.HumanoidRootPart.CFrame =  workspace:FindFirstChild(LocalPlayer.Name.."StringKOD").Idaro.HumanoidRootPart.CFrame
+workspace:FindFirstChild(LocalPlayer.Name.."StringKOD"):Destroy()
+end
+end
+
+local Mouse = game.Players.LocalPlayer:GetMouse()
+
+local MoveDirection = Vector3.new(0,0,0)
+local WSpped = 0 
+local LeftSpeed = 0
+local UpSpeed = 0
+local uis = game:GetService("UserInputService")
+
+function IdleRigXD()
+if RigIdle and RigWalk.IsPlaying and WSpped == 0 and LeftSpeed == 0 and UpSpeed == 0 then
+RigIdle:Play()
+RigWalk:Stop()
+end
+end
+
+function WalkRigXD()
+if RigWalk and RigIdle.IsPlaying then
+RigIdle:Stop()
+RigWalk:Play()
+end
+end
+    
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+    
+    local MoveDirection = Vector3.new(0,0,0)
+    local WSpped = 0 
+    local LeftSpeed = 0
+    local UpSpeed = 0
+    local uis = game:GetService("UserInputService")
+    
+    function IdleRigXD()
+    if RigIdle and RigWalk.IsPlaying and WSpped == 0 and LeftSpeed == 0 and UpSpeed == 0 then
+    RigIdle:Play()
+    RigWalk:Stop()
+    end
+    end
+    
+    function WalkRigXD()
+    if RigWalk and RigIdle.IsPlaying then
+    RigIdle:Stop()
+    RigWalk:Play()
+    end
+    end
+    
+    Mouse.KeyDown:Connect(function(KeyDownXD)
+    if workspace:FindFirstChild(LocalPlayer.Name.."StringKOD") then
+    if KeyDownXD == "w" then
+    WSpped = -1
+    WalkRigXD()
+    elseif KeyDownXD == "a" then
+    LeftSpeed = -1
+    WalkRigXD()
+    elseif KeyDownXD == "d" then
+    LeftSpeed = 1
+    WalkRigXD()
+    elseif KeyDownXD == "s" then
+    WSpped = 1
+    WalkRigXD()
+    end
+    end
+    end)
+    
+    Mouse.KeyUp:Connect(function(KeyDownXD)
+    if KeyDownXD == "w" then
+    WSpped = 0
+    IdleRigXD()
+    elseif KeyDownXD == "a" then
+    LeftSpeed = 0
+    IdleRigXD()
+    elseif KeyDownXD == "d" then
+    LeftSpeed = -0
+    IdleRigXD()
+    elseif KeyDownXD == "s" then
+    WSpped = 0
+    IdleRigXD()
+    end
+    end)
+    
+    
+    game["Run Service"].Heartbeat:Connect(function()
+    if Invisible then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+    game.Players.LocalPlayer.Character.Head.CanCollide = false
+    game.Players.LocalPlayer.Character.Head.Anchored = true
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Transparency = 0
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Material = "ForceField"
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Size = Vector3.new(1.5,1.7,0.7)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Color = Color3.fromRGB(255,255,255)
+    game.Players.LocalPlayer.Character.Head.CFrame = workspace:FindFirstChild(LocalPlayer.Name.."StringKOD").Idaro.HumanoidRootPart.CFrame * CFrame.new(0, -20, 0)
+    if game.Players.LocalPlayer.Character:FindFirstChild("Combat") then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace:FindFirstChild(LocalPlayer.Name.."StringKOD").Idaro.HumanoidRootPart.CFrame * CFrame.new(0, -0.1, -0.3)
+    else
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace:FindFirstChild(LocalPlayer.Name.."StringKOD").Idaro.HumanoidRootPart.CFrame * CFrame.new(0, -20, -0.3)
+    end
+    end
+    if WalkSpeed == true then
+    MoveDirection = Vector3.new(LeftSpeed, UpSpeed, WSpped)
+    workspace:FindFirstChild(LocalPlayer.Name.."StringKOD"):FindFirstChild("Idaro").Humanoid:Move(MoveDirection, true)
+    end
+    end)
+ 
+    
+    
+    game:GetService('RunService').Stepped:connect(function()
+    local plrname = game.Players.LocalPlayer.Name
+    if game.workspace:FindFirstChild(plrname.. "StringKOD") then
+    workspace:FindFirstChild(LocalPlayer.Name.."StringKOD").Idaro.Humanoid.WalkSpeed = Speed
+    end
+    end)
+    
+    
+    game:GetService('RunService').Stepped:connect(function()
+    LocalPlayer = game:GetService("Players").LocalPlayer
+    OldChar = LocalPlayer.Character
+    end)
+    
+    
+    uis.InputBegan:Connect(function(i)
+    if i.KeyCode == Enum.KeyCode.Space then 
+    local plrname = game.Players.LocalPlayer.Name
+    if game.workspace:FindFirstChild(plrname.. "StringKOD") then
+    workspace:FindFirstChild(game.Players.LocalPlayer.Name.."StringKOD"):FindFirstChild("Idaro").Humanoid:ChangeState(3)
+    end
+    end
+    end)
+--//------------------------------------------------------------------------------------------\\--
+   OWNER = game:GetService("Players").LocalPlayer
+   RS = game:GetService("RunService")
+   TS = game:GetService("TweenService")
+   ANIM = OWNER.Character:WaitForChild("Animate")
+--//------------------------------------------------------------------------------------------\\--
+   function AnimPlay(ID, SPEED)
+       local animation = Instance.new('Animation', game:GetService("Workspace"))
+       animation.AnimationId = 'rbxassetid://'..ID
+       playing = OWNER.Character:WaitForChild("Humanoid"):LoadAnimation(animation)
+       playing:Play() 
+           if tonumber(SPEED) then
+               playing:AdjustSpeed(SPEED)
+           else
+               playing:AdjustSpeed(1)
+           end
+       animation:Destroy()
+   end
+--//------------------------------------------------------------------------------------------\\--
+   function CreateKeybind(keybind, callback)
+       callback = callback or function() end
+       game:GetService("UserInputService").InputBegan:Connect(function(Key)
+       pcall(function()
+           if game:GetService("UserInputService"):GetFocusedTextBox() then return end
+               if Key.KeyCode == Enum.KeyCode[keybind] then
+                   pcall(callback)
+               end
+           end)
+       end)
+   end
+--//------------------------------------------------------------------------------------------\\--
+   function AnimStop(ID, SPEED)
+       for i,v in pairs(OWNER.Character:WaitForChild("Humanoid"):GetPlayingAnimationTracks()) do
+           if v.Animation.AnimationId == 'rbxassetid://'..ID then
+             if tonumber(SPEED) then
+                   v:Stop(SPEED)
+               else
+                   v:Stop()
+               end
+           end
+       end
+   end
+--//------------------------------------------------------------------------------------------\\--
+   function TP(x,y,z)
+    pcall(function()
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(x,y,z)
+    end)
+end
+--//------------------------------------------------------------------------------------------\\--
+function Ringtone(ID)
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+    local args = {
+        [1] = "RingTone",
+        [2] = ID
+        
+    }
+    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Play Sound 
+    game.Players:chat("/e cm")
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Stop Audio
+    function Stop()
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Change Id
+    function Change(ID)
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+    local args = {
+        [1] = "RingTone",
+        [2] = ID
+        
+    }
+    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
+    function Call()
+    game.Players:chat("/e cm")
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
+    -- Ringtone(ID)
+    -- Stop()
+    -- Change(ID)
+    -- Call()
+--//------------------------------------------------------------------------------------------\\--
+
+CarPage.AddSlider("Car Speed", {Min = 20, Max = 150, Def = 50}, function(T)
+    getgenv().Speed = T
+    end)
+    CarPage.AddSlider("Rotate Speed", {Min = 2, Max = 5, Def = 2}, function(R)
+    getgenv().RSpeed = R
+    end)
+    
+    CarPage.AddToggle("Activate Car", false, function(F)
+    if F == true then
+    local P = Instance.new("BodyAngularVelocity")
+    P.Parent = workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat
+    P.Name = "Rotate"
+    P.MaxTorque = Vector3.new(99e99,99e99,99e99)
+    P.AngularVelocity = Vector3.new(0,0,0)
+    
+    local P_2 = Instance.new("BodyVelocity")
+    P_2.Parent = workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat
+    P_2.Name = "Move"
+    P_2.MaxForce = Vector3.new(99e99,0,99e99)
+    P_2.Velocity = Vector3.new(0,0,0)
+    
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+    c1 = Mouse.KeyDown:Connect(function(KeyDownXD)
+            if KeyDownXD == "w" then
+            getgenv().LoopAudio = true
+                game:GetService('RunService'):UnbindFromRenderStep("CCC2")
+                game:GetService('RunService'):BindToRenderStep("CCC", 0 , function()
+                workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X*getgenv().Speed,0,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z*getgenv().Speed)
+                end)
+            elseif KeyDownXD == "a" then
+                game:GetService('RunService'):UnbindFromRenderStep("RRR2")
+                game:GetService('RunService'):BindToRenderStep("RRR", 0 , function()
+                workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate.AngularVelocity = Vector3.new(0,getgenv().RSpeed,0)
+                end)
+            elseif KeyDownXD == "d" then
+                game:GetService('RunService'):UnbindFromRenderStep("RRR")
+                game:GetService('RunService'):BindToRenderStep("RRR2", 0 , function()
+                workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate.AngularVelocity = Vector3.new(0,-getgenv().RSpeed,0)
+                end)
+            elseif KeyDownXD == "s" then
+                game:GetService('RunService'):UnbindFromRenderStep("CCC")
+                game:GetService('RunService'):BindToRenderStep("CCC2", 0 , function()
+                workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X * -getgenv().Speed,0,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z * -getgenv().Speed)
+                end)
+        end
+    end)
+    c2 = Mouse.KeyUp:Connect(function(KeyDownXD)
+        if KeyDownXD == "w" then
+            game:GetService('RunService'):UnbindFromRenderStep("CCC")
+            wait(0.01)
+            workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move.Velocity = Vector3.new(0,0,0)
+        elseif KeyDownXD == "a" then
+            game:GetService('RunService'):UnbindFromRenderStep("RRR")
+            workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate.AngularVelocity = Vector3.new(0,0,0)
+        elseif KeyDownXD == "d" then
+            game:GetService('RunService'):UnbindFromRenderStep("RRR2")
+            workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate.AngularVelocity = Vector3.new(0,0,0)
+        elseif KeyDownXD == "s" then
+            game:GetService('RunService'):UnbindFromRenderStep("CCC2")
+            wait(0.01)
+            workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move.Velocity = Vector3.new(0,0,0)
+        end
+    end)
+    elseif F == false then
+    c1:Disconnect()
+    c2:Disconnect()
+    workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate:Destroy()
+    workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move:Destroy()
+    end
+    end)
+    
+    CarPage.AddButton("Fix Rotation", function()
+    workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate:Destroy()
+    workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move:Destroy()
+    wait(1)
+    local P_3 = Instance.new("BodyGyro")
+    P_3.Name = "Fix"
+    P_3.MaxTorque = Vector3.new(99e99,99e99,99e99)
+    P_3.Parent = workspace.Vehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat
+    wait(3)
+    workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Fix:Destroy()
+    wait(0.5)
+    local P = Instance.new("BodyAngularVelocity")
+    P.Parent = workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat
+    P.Name = "Rotate"
+    P.MaxTorque = Vector3.new(99e99,99e99,99e99)
+    P.AngularVelocity = Vector3.new(0,0,0)
+    
+    local P_2 = Instance.new("BodyVelocity")
+    P_2.Parent = workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat
+    P_2.Name = "Move"
+    P_2.MaxForce = Vector3.new(99e99,0,99e99)
+    P_2.Velocity = Vector3.new(0,0,0)
+    end)
+    CarPage.AddButton("Horn", function()
+    Ringtone(5945905639)
+    end)
+    CarPage.AddButton("Car Sound", function()
+    Ringtone(533936299)
+    end)
+        
+InvisiblePage.AddButton("Turn Invisible", function()
+if game.Players.LocalPlayer.Character:FindFirstChild("GRABBING_CONSTRAINT") then
+game.Players.LocalPlayer.Character.Humanoid.RigType = "R6"
+wait(0.1)
+game.Players.LocalPlayer.Character.Humanoid.MaxHealth = 99e99
+game:GetService("Workspace").FallenPartsDestroyHeight = math.huge-math.huge
+wait(0.1)
+ModelCharacter()
+end
+end)
+
+InvisiblePage.AddButton("Respawn", function()
+workspace:FindFirstChild(LocalPlayer.Name.."StringKOD").Idaro.HumanoidRootPart.CFrame = CFrame.new(-108,324,-377)
+end)
+InvisiblePage.AddSlider("Speed", {Min = 0, Max = 150, Def = 50}, function(sss)
+Speed = sss
+end)
+InvisiblePage.AddButton("Teleport To Alt For Invis", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-46, 12, 149)
+end)
+
+wait(1)
+game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.Visible = true
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+game.Players.LocalPlayer.PlayerGui:WaitForChild("MainScreenGui"):WaitForChild("Bar"):WaitForChild("HP"):WaitForChild("Picture"):WaitForChild("Life").Visible = true
+end)
+
+wait(1)
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.LifeImage.Image = "http://www.roblox.com/asset/?id=14555713902"
+
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.Image = "http://www.roblox.com/asset/?id=5209162390"
+
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.Image = "http://www.roblox.com/asset/?id=148787739"
+
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = "http://www.roblox.com/asset/?id=148787739"
+
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(107, 50, 124)
+
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.BackgroundColor3 = Color3.fromRGB(70, 103, 164)
+
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.BackgroundColor3 = Color3.fromRGB(107, 50, 124)
+
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.TextLabel.Text = "IMMUNITY"
+
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.Text = "Dark Energy"
+
+game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.TextLabel.Text = "OVERSHIELD"
+
+spawn(function()
+game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
+wait(1)
+local H_1 = Instance.new("Highlight")
+H_1.Parent = game.Players.LocalPlayer.Character
+H_1.FillColor = Color3.new(0,0,0)
+H_1.OutlineColor = Color3.new(255,255,255)
+H_1.FillTransparency = 0.9
+H_1.OutlineTransparency = 0.75
+wait(0.1)
+local a = Instance.new("StringValue")
+a.Parent = game.Players.LocalPlayer.Character.BodyEffects.Movement
+a.Name = "FastSprint"
+
+game:GetService('RunService'):BindToRenderStep("fr", 0 , function()
+game.Players.LocalPlayer.Character.Humanoid.Health = 100
+end)
+end)
