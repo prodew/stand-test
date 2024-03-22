@@ -453,11 +453,15 @@ tool.AddToggle("Hit Sense", false, function(t)
             wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         ReCall()
+        wait(.1)
+        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
         else
             game.ReplicatedStorage.MainEvent:FireServer("Block",true)
             wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         Ringtone(3280066384)
+        wait(.1)
+        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
         end
         end
         ReCall()
@@ -473,11 +477,15 @@ tool.AddToggle("Hit Sense", false, function(t)
             wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         ReCall()
+        wait(.1)
+        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
         else
             game.ReplicatedStorage.MainEvent:FireServer("Block",true)
             wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         Ringtone(3280066384)
+        wait(.1)
+        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
         end
         ReCall()
         d1:Stop()
@@ -492,11 +500,15 @@ tool.AddToggle("Hit Sense", false, function(t)
             wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         ReCall()
+        wait(.1)
+        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
         else
             game.ReplicatedStorage.MainEvent:FireServer("Block",true)
             wait(.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
         Ringtone(3280066384)
+        wait(.1)
+        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
         end
         d1:Stop()
         d2:Stop()
@@ -6731,7 +6743,7 @@ MIs.AddLabel("deer audio  id sound immos")
 MIs.AddButton("anti autokill!",function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-897.6600952148438, -640.0717163085938, -709.875732421875)
 end)
-MIs.AddButton("anti stomp work for me lol!",function()
+MIs.AddButton("anti stomp!",function()
     function chat(msg)
         local A_1 = msg
         local A_2 = "All"
@@ -6965,6 +6977,5 @@ game.Players.LocalPlayer.CharacterAdded:connect(function()
 
 
 end)
-
 
 
