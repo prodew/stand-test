@@ -3541,7 +3541,7 @@ tool.AddButton("Aimlock Q", function()
             notifaction = true,
             pingprediction = false,
             FOV = math.huge,
-            RESOVLER = false,
+            RESOVLER = true,
             Tracer = true,
             TracerColor = Color3.new(0, 233, 211),
             TracerTransparency = 0.75,
@@ -3699,7 +3699,7 @@ tool.AddButton("Aimlock Q", function()
                     if Settings.Kalslock.notifaction == true then
  
                         game.StarterGui:SetCore("SendNotification", {
-                            Title = "ez win";
+                            Title = "ez lock nega";
                             Text = "  locked: "..tostring(Plr.Character.Humanoid.DisplayName),
                             Icon = "http://www.roblox.com/asset/?id=8709610734",
                             Duration = 3
