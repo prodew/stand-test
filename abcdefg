@@ -5740,6 +5740,25 @@ Diego.AddButton("fake animatoin dahood ",function()
     game.Players.LocalPlayer.Character.Humanoid.Jump = true   
     
 end)
+Diego.AddButton("fake animatoin best ",function()
+    local Char = game.Players.LocalPlayer.Character
+    local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+    
+    for i,v in next, Hum:GetPlayingAnimationTracks() do
+        v:Stop()
+    end
+    wait(1)
+    local Animate = game.Players.LocalPlayer.Character.Animate
+    Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=4417977954"
+    Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=4417978624"
+    Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=707897309"
+    Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=4417979645"
+    Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=707853694"
+    Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=3135793091"
+    Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=2791328524"
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true   
+    
+end)
 Diego.AddButton("fake animatoin bold ",function()
     local Char = game.Players.LocalPlayer.Character
     local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
