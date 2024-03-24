@@ -6882,6 +6882,8 @@ MIs.AddButton("anti stomp!",function()
         wait(.1)
         repeat
             wait(.1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.dahoodbotmoney5.Character.HumanoidRootPart.Position)*CFrame.new(0,0,2)
+            wait(.1)
             game.ReplicatedStorage.MainEvent:FireServer("ChargeButton")
             wait(.1)
         until game.Players.dahoodbotmoney5.character.BodyEffects["K.O"].Value == true
