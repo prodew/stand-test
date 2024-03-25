@@ -823,10 +823,10 @@ tool.AddToggle("Hit Sense", false, function(t)
     game:GetService('RunService'):UnbindFromRenderStep("Spidersense")
     end
 end)
-tool.AddButton("god spin prass Q",function()
+tool.AddButton("god spin prass K",function()
     getgenv().toggle = false
 game:GetService("UserInputService").InputBegan:Connect(function(ea , ONG)
-if ea.KeyCode == Enum.KeyCode.Q and not ONG then 
+if ea.KeyCode == Enum.KeyCode.K and not ONG then 
 getgenv().toggle = not getgenv().toggle
 if getgenv().toggle == true then 
     getgenv().loop = game:GetService("RunService").Heartbeat:Connect(function()
