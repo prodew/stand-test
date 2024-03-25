@@ -4690,485 +4690,486 @@ AnimationPack(game.Players.LocalPlayer.Character)
 game.Players.LocalPlayer.CharacterAdded:Connect(AnimationPack)
 end)
 tool.AddButton("i ron man",function()function Ringtone(ID)
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
-    local Tool = nil
-    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
-    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
-    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
-    end
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
-    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
-    game:GetService("Players").LocalPlayer.Character
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
-    local args = {
-        [1] = "RingTone",
-        [2] = ID
-        
-    }
-    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
-    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
-    game:GetService("Players").LocalPlayer.Backpack
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
-    if Tool ~= true then
-    if Tool then
-    Tool.Parent = game:GetService("Players").LocalPlayer.Character
-    end
-    end
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Play Sound 
-    game.Players:chat("/e cm")
-    end
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Stop Audio
-    function Stop()
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
-    local Tool = nil
-    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
-    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
-    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
-    end
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
-    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
-    game:GetService("Players").LocalPlayer.Character
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
-    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
-    game:GetService("Players").LocalPlayer.Backpack
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
-    if Tool ~= true then
-    if Tool then
-    Tool.Parent = game:GetService("Players").LocalPlayer.Character
-    end
-    end
-    end
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Change Id
-    function Change(ID)
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
-    local Tool = nil
-    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
-    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
-    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
-    end
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
-    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
-    game:GetService("Players").LocalPlayer.Character
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
-    local args = {
-        [1] = "RingTone",
-        [2] = ID
-        
-    }
-    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
-    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
-    game:GetService("Players").LocalPlayer.Backpack
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
-    if Tool ~= true then
-    if Tool then
-    Tool.Parent = game:GetService("Players").LocalPlayer.Character
-    end
-    end
-    end
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
-    function Call()
-    game.Players:chat("/e cm")
-    end
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Recall
-    function ReCall()
-    Stop()
-    game.Players:chat("/e cm")
-    end
-    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
-    -- Ringtone(ID)
-    -- Change(ID)
-    -- Call()
-    -- ReCall()
-    -- Stop()
-    
-    
-    wait(0.5)
-    -- Anti Afk Ril --
-    local vu = game:GetService("VirtualUser")
-    game:GetService("Players").LocalPlayer.Idled:connect(function()
-    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-    wait(1)
-    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-    end)
-    -- AntiCheat Bypass Now Execute FireServer("OneMoreTime") --
-    assert(getrawmetatable)
-    gmt = getrawmetatable(game)
-    setreadonly(gmt, false)
-    old = gmt.__namecall
-    gmt.__namecall =
-        newcclosure(
-            function(self, ...)
-            local args = {...}
-            if tostring(args[1]) == "BreathingHAMON" then
-                return
-            elseif tostring(args[1]) == "TeleportDetect" then
-                return
-            elseif tostring(args[1]) == "CHECKER_1" then
-                return
-            elseif tostring(args[1]) == "CHECKER" then
-                return
-            elseif tostring(args[1]) == "GUI_CHECK" then
-                return
-            elseif tostring(args[1]) == "OneMoreTime" then
-                return
-            elseif tostring(args[1]) == "checkingSPEED" then
-                return
-            elseif tostring(args[1]) == "BANREMOTE" then
-                return
-            elseif tostring(args[1]) == "PERMAIDBAN" then
-                return
-            elseif tostring(args[1]) == "KICKREMOTE" then
-                return
-            elseif tostring(args[1]) == "BR_KICKPC" then
-                return
-            end
-            return old(self, ...)
-            end)
-
-function AnimPlay(ID, SPEED)
-        local animation = Instance.new('Animation', game:GetService("Workspace"))
-        animation.AnimationId = 'rbxassetid://'..ID
-        playing = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(animation)
-        playing:Play() 
-        if tonumber(SPEED) then
-            playing:AdjustSpeed(SPEED)
-        else
-            playing:AdjustSpeed(1)
+    function Ringtone(ID)
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+        local Tool = nil
+        if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+        Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+        game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
         end
-        animation:Destroy()
-    end
-    
-    function AnimStop(ID, SPEED)
-        for i,v in pairs(game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):GetPlayingAnimationTracks()) do
-            if v.Animation.AnimationId == 'rbxassetid://'..ID then
-                if tonumber(SPEED) then
-                    v:Stop(SPEED)
-                else
-                    v:Stop()
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+        game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Character
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+        local args = {
+            [1] = "RingTone",
+            [2] = ID
+            
+        }
+        game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Backpack
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+        if Tool ~= true then
+        if Tool then
+        Tool.Parent = game:GetService("Players").LocalPlayer.Character
+        end
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Play Sound 
+        game.Players:chat("/e cm")
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Stop Audio
+        function Stop()
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+        local Tool = nil
+        if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+        Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+        game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+        game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Character
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Backpack
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+        if Tool ~= true then
+        if Tool then
+        Tool.Parent = game:GetService("Players").LocalPlayer.Character
+        end
+        end
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Change Id
+        function Change(ID)
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+        local Tool = nil
+        if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+        Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+        game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+        game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Character
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+        local args = {
+            [1] = "RingTone",
+            [2] = ID
+            
+        }
+        game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+        game:GetService("Players").LocalPlayer.Backpack
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+        if Tool ~= true then
+        if Tool then
+        Tool.Parent = game:GetService("Players").LocalPlayer.Character
+        end
+        end
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
+        function Call()
+        game.Players:chat("/e cm")
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Recall
+        function ReCall()
+        Stop()
+        game.Players:chat("/e cm")
+        end
+        --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
+        -- Ringtone(ID)
+        -- Change(ID)
+        -- Call()
+        -- ReCall()
+        -- Stop()
+        
+        
+        wait(0.5)
+        -- Anti Afk Ril --
+        local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        wait(1)
+        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        end)
+        -- AntiCheat Bypass Now Execute FireServer("OneMoreTime") --
+        assert(getrawmetatable)
+        gmt = getrawmetatable(game)
+        setreadonly(gmt, false)
+        old = gmt.__namecall
+        gmt.__namecall =
+            newcclosure(
+                function(self, ...)
+                local args = {...}
+                if tostring(args[1]) == "BreathingHAMON" then
+                    return
+                elseif tostring(args[1]) == "TeleportDetect" then
+                    return
+                elseif tostring(args[1]) == "CHECKER_1" then
+                    return
+                elseif tostring(args[1]) == "CHECKER" then
+                    return
+                elseif tostring(args[1]) == "GUI_CHECK" then
+                    return
+                elseif tostring(args[1]) == "OneMoreTime" then
+                    return
+                elseif tostring(args[1]) == "checkingSPEED" then
+                    return
+                elseif tostring(args[1]) == "BANREMOTE" then
+                    return
+                elseif tostring(args[1]) == "PERMAIDBAN" then
+                    return
+                elseif tostring(args[1]) == "KICKREMOTE" then
+                    return
+                elseif tostring(args[1]) == "BR_KICKPC" then
+                    return
                 end
+                return old(self, ...)
+                end)
+    
+    function AnimPlay(ID, SPEED)
+            local animation = Instance.new('Animation', game:GetService("Workspace"))
+            animation.AnimationId = 'rbxassetid://'..ID
+            playing = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(animation)
+            playing:Play() 
+            if tonumber(SPEED) then
+                playing:AdjustSpeed(SPEED)
+            else
+                playing:AdjustSpeed(1)
             end
+            animation:Destroy()
         end
-    end
---//------------------------------------------------------------------------------------------\\--
-        getgenv().MAIN = {
-            FPS = 60,
-            ANTIFLING = false,
-            }
-        --//------------------------------------------------------------------------------------------\\--
-        if not game['Loaded'] or not game:GetService("Players").LocalPlayer then 
-            game['Loaded']:Wait();
-            game:WaitForChild(game:GetService('Players')); 
-            game:GetService('Players'):WaitForChild(game:GetService("Players").LocalPlayer.Name)
-        end 
-        --//------------------------------------------------------------------------------------------\\--
-        if tonumber(MAIN.FPS) then
-            setfpscap(MAIN.FPS)
-        end
-        --//------------------------------------------------------------------------------------------\\--
-        OWNER = game:GetService("Players").LocalPlayer
-        RS = game:GetService("RunService")
-        TS = game:GetService("TweenService")
-        ANIM = OWNER.Character:WaitForChild("Animate")
-        Mouse = OWNER:GetMouse()
-        --//------------------------------------------------------------------------------------------\\--
-        OWNER.CameraMaxZoomDistance = math.huge
-        --//------------------------------------------------------------------------------------------\\--
-        if MAIN.ANTIFLING then
-        coroutine.wrap(function()
-            local Services = setmetatable({}, {__index = function(Self, Index)
-                local NewService = game.GetService(game, Index)
-                if NewService then
-                Self[Index] = NewService
-                end
-                return NewService
-                end})
-            local function PlayerAdded(Player)
-            local Detected = false
-            local Character;
-            local PrimaryPart;
-            local function CharacterAdded(NewCharacter)
-                Character = NewCharacter
-                repeat
-                    wait()
-                    PrimaryPart = NewCharacter:FindFirstChild("HumanoidRootPart")
-                until PrimaryPart
-                Detected = false
-            end
-            CharacterAdded(Player.Character or Player.CharacterAdded:Wait())
-            Player.CharacterAdded:Connect(CharacterAdded)
-            Services.RunService.Heartbeat:Connect(function()
-                if (Character and Character:IsDescendantOf(workspace)) and (PrimaryPart and PrimaryPart:IsDescendantOf(Character)) then
-                    if PrimaryPart.AssemblyAngularVelocity.Magnitude > 250 or PrimaryPart.AssemblyLinearVelocity.Magnitude > 250 then
-                        if Detected == false then end
         
-                            Detected = true
-                        for i,v in ipairs(Character:GetDescendants()) do
-                            if v:IsA("BasePart") then
-                                v.CanCollide = false
-                                v.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
-                                v.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
-                                v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
-                            end
-                        end
-                        PrimaryPart.CanCollide = false
-                        PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
-                        PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
-                        PrimaryPart.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+        function AnimStop(ID, SPEED)
+            for i,v in pairs(game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):GetPlayingAnimationTracks()) do
+                if v.Animation.AnimationId == 'rbxassetid://'..ID then
+                    if tonumber(SPEED) then
+                        v:Stop(SPEED)
+                    else
+                        v:Stop()
                     end
                 end
-            end)
             end
-            for i,v in ipairs(Services.Players:GetPlayers()) do
-            if v ~= OWNER then
-                PlayerAdded(v)
-            end
-            end
-            Services.Players.PlayerAdded:Connect(PlayerAdded)
-            local LastPosition = nil
-            Services.RunService.Heartbeat:Connect(function()
-            pcall(function()
-                local PrimaryPart = OWNER.Character.PrimaryPart
-                if PrimaryPart.AssemblyLinearVelocity.Magnitude > 150 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 150 then
-                        PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
-                        PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
-                        PrimaryPart.CFrame = LastPosition
-                        elseif PrimaryPart.AssemblyLinearVelocity.Magnitude < 50 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 then
-                        LastPosition = PrimaryPart.CFrame
-                        end
-                    end)
-                end)
-            end)()
         end
     --//------------------------------------------------------------------------------------------\\--
-    function Fly()
-        function sandbox(var,func)
-            local env = getfenv(func)
-            local newenv = setmetatable({},{
-                __index = function(self,k)
-                    if k=="script" then
-                        return var
-                    else
-                        return env[k]
+            getgenv().MAIN = {
+                FPS = 60,
+                ANTIFLING = false,
+                }
+            --//------------------------------------------------------------------------------------------\\--
+            if not game['Loaded'] or not game:GetService("Players").LocalPlayer then 
+                game['Loaded']:Wait();
+                game:WaitForChild(game:GetService('Players')); 
+                game:GetService('Players'):WaitForChild(game:GetService("Players").LocalPlayer.Name)
+            end 
+            --//------------------------------------------------------------------------------------------\\--
+            if tonumber(MAIN.FPS) then
+                setfpscap(MAIN.FPS)
+            end
+            --//------------------------------------------------------------------------------------------\\--
+            OWNER = game:GetService("Players").LocalPlayer
+            RS = game:GetService("RunService")
+            TS = game:GetService("TweenService")
+            ANIM = OWNER.Character:WaitForChild("Animate")
+            Mouse = OWNER:GetMouse()
+            --//------------------------------------------------------------------------------------------\\--
+            OWNER.CameraMaxZoomDistance = math.huge
+            --//------------------------------------------------------------------------------------------\\--
+            if MAIN.ANTIFLING then
+            coroutine.wrap(function()
+                local Services = setmetatable({}, {__index = function(Self, Index)
+                    local NewService = game.GetService(game, Index)
+                    if NewService then
+                    Self[Index] = NewService
                     end
-                end,
-            })
-            setfenv(func,newenv)
-            return func
-        end
-        cors = {}
-        mas = Instance.new("Model",game:GetService("Lighting"))
-        Tool0 = Instance.new("Tool")
-        LocalScript1 = Instance.new("LocalScript")
-        Animation4 = Instance.new("Animation")
-        RemoteEvent5 = Instance.new("RemoteEvent")
-        Animation6 = Instance.new("Animation")
-        Tool0.Name = "Fly"
-        Tool0.Parent = nil
-        Tool0.CanBeDropped = false
-        Tool0.RequiresHandle = false
-        LocalScript1.Name = "local"
-        LocalScript1.Parent = Tool0
-        table.insert(cors,sandbox(LocalScript1,function()
-            wait();
-            local l__LocalPlayer__1 = game.Players.LocalPlayer;
-            while true do
+                    return NewService
+                    end})
+                local function PlayerAdded(Player)
+                local Detected = false
+                local Character;
+                local PrimaryPart;
+                local function CharacterAdded(NewCharacter)
+                    Character = NewCharacter
+                    repeat
+                        wait()
+                        PrimaryPart = NewCharacter:FindFirstChild("HumanoidRootPart")
+                    until PrimaryPart
+                    Detected = false
+                end
+                CharacterAdded(Player.Character or Player.CharacterAdded:Wait())
+                Player.CharacterAdded:Connect(CharacterAdded)
+                Services.RunService.Heartbeat:Connect(function()
+                    if (Character and Character:IsDescendantOf(workspace)) and (PrimaryPart and PrimaryPart:IsDescendantOf(Character)) then
+                        if PrimaryPart.AssemblyAngularVelocity.Magnitude > 250 or PrimaryPart.AssemblyLinearVelocity.Magnitude > 250 then
+                            if Detected == false then end
+            
+                                Detected = true
+                            for i,v in ipairs(Character:GetDescendants()) do
+                                if v:IsA("BasePart") then
+                                    v.CanCollide = false
+                                    v.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                                    v.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                                    v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+                                end
+                            end
+                            PrimaryPart.CanCollide = false
+                            PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                            PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                            PrimaryPart.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+                        end
+                    end
+                end)
+                end
+                for i,v in ipairs(Services.Players:GetPlayers()) do
+                if v ~= OWNER then
+                    PlayerAdded(v)
+                end
+                end
+                Services.Players.PlayerAdded:Connect(PlayerAdded)
+                local LastPosition = nil
+                Services.RunService.Heartbeat:Connect(function()
+                pcall(function()
+                    local PrimaryPart = OWNER.Character.PrimaryPart
+                    if PrimaryPart.AssemblyLinearVelocity.Magnitude > 150 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 150 then
+                            PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                            PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                            PrimaryPart.CFrame = LastPosition
+                            elseif PrimaryPart.AssemblyLinearVelocity.Magnitude < 50 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 then
+                            LastPosition = PrimaryPart.CFrame
+                            end
+                        end)
+                    end)
+                end)()
+            end
+        --//------------------------------------------------------------------------------------------\\--
+        function Fly()
+            function sandbox(var,func)
+                local env = getfenv(func)
+                local newenv = setmetatable({},{
+                    __index = function(self,k)
+                        if k=="script" then
+                            return var
+                        else
+                            return env[k]
+                        end
+                    end,
+                })
+                setfenv(func,newenv)
+                return func
+            end
+            cors = {}
+            mas = Instance.new("Model",game:GetService("Lighting"))
+            Tool0 = Instance.new("Tool")
+            LocalScript1 = Instance.new("LocalScript")
+            Animation4 = Instance.new("Animation")
+            RemoteEvent5 = Instance.new("RemoteEvent")
+            Animation6 = Instance.new("Animation")
+            Tool0.Name = "Fly"
+            Tool0.Parent = nil
+            Tool0.CanBeDropped = false
+            Tool0.RequiresHandle = false
+            LocalScript1.Name = "local"
+            LocalScript1.Parent = Tool0
+            table.insert(cors,sandbox(LocalScript1,function()
                 wait();
-                if l__LocalPlayer__1.Character then
-                    break;
+                local l__LocalPlayer__1 = game.Players.LocalPlayer;
+                while true do
+                    wait();
+                    if l__LocalPlayer__1.Character then
+                        break;
+                    end;
                 end;
-            end;
-            local l__Character__2 = l__LocalPlayer__1.Character;
-            local l__Humanoid__3 = l__Character__2:WaitForChild("Humanoid");
-            local l__Parent__4 = script.Parent;
-            local u1 = false;
-            local u2 = l__Humanoid__3:LoadAnimation(script.Hover);
-            local u3 = nil;
-            local u4 = nil;
-            local u5 = false;
-            local u6 = false;
-            local u7 = l__Humanoid__3:LoadAnimation(script.Fly);
-            local fly = false;
-            local Mouse = OWNER:GetMouse()
-            local speed = false;
-            local Land = Instance.new('Animation', game.ReplicatedStorage)
-            Land.AnimationId = 'rbxassetid://3539706018'
-            local Landing = OWNER.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Land)
-            game:GetService("UserInputService").InputBegan:Connect(function(Input)
-                if Input.KeyCode == Enum.KeyCode.Q and fly == false then
-                    if game:GetService("UserInputService"):GetFocusedTextBox() then return end
-                    Ringtone(1010380770)
-                    fly = true;
-                    u1 = true;
-                    u2:Play();
-                    u3 = Instance.new("BodyGyro");
-                    u3.Name = "NA";
-                    u3.Parent = l__Character__2.HumanoidRootPart;
-                    u3.MaxTorque = Vector3.new(30000, 0, 30000);
-                    u3.P = u3.P * 5;
-                    u3.CFrame = CFrame.new(0, 0, 0);
-                    u4 = Instance.new("BodyPosition");
-                    u4.Name = "NA";
-                    u4.Parent = l__Character__2.HumanoidRootPart;
-                    u4.MaxForce = Vector3.new(60000, 60000, 60000);
-                    u4.Position = l__Character__2.HumanoidRootPart.Position + Vector3.new(0,30,0)
-
-                end;
-            end);
+                local l__Character__2 = l__LocalPlayer__1.Character;
+                local l__Humanoid__3 = l__Character__2:WaitForChild("Humanoid");
+                local l__Parent__4 = script.Parent;
+                local u1 = false;
+                local u2 = l__Humanoid__3:LoadAnimation(script.Hover);
+                local u3 = nil;
+                local u4 = nil;
+                local u5 = false;
+                local u6 = false;
+                local u7 = l__Humanoid__3:LoadAnimation(script.Fly);
+                local fly = false;
+                local Mouse = OWNER:GetMouse()
+                local speed = false;
+                local Land = Instance.new('Animation', game.ReplicatedStorage)
+                Land.AnimationId = 'rbxassetid://3539706018'
+                local Landing = OWNER.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Land)
                 game:GetService("UserInputService").InputBegan:Connect(function(Input)
-                    if Input.KeyCode == Enum.KeyCode.R then
+                    if Input.KeyCode == Enum.KeyCode.Q and fly == false then
                         if game:GetService("UserInputService"):GetFocusedTextBox() then return end
-                        if u5 or u1 == false then
-                            return;
-                        end;
-                        game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.3), {FieldOfView = 78}):Play()
-                        Ringtone(13850747440)
-                        wait(0.1)
-                        coroutine.wrap(function()
-                            repeat game:GetService("RunService").Stepped:Wait() until OWNER.Character.Humanoid.FloorMaterial ~= Enum.Material.Air
-                            if u6 == false then return end
-                            game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.45), {FieldOfView = 70}):Play()
-                            all = false
-                            Ringtone(13850747895)
-                            AnimPlay(13850663836, 1)
-                            u1 = false;
-                            u6 = false;
-                            if u3 then
-                                u3:Destroy();
-                                u3 = nil;
-                            end
-                            if u4 then
-                                u4:Destroy();
-                                u4 = nil;
-                            end
+                        Ringtone(1010380770)
+                        fly = true;
+                        u1 = true;
+                        u2:Play();
+                        u3 = Instance.new("BodyGyro");
+                        u3.Name = "NA";
+                        u3.Parent = l__Character__2.HumanoidRootPart;
+                        u3.MaxTorque = Vector3.new(30000, 0, 30000);
+                        u3.P = u3.P * 5;
+                        u3.CFrame = CFrame.new(0, 0, 0);
+                        u4 = Instance.new("BodyPosition");
+                        u4.Name = "NA";
+                        u4.Parent = l__Character__2.HumanoidRootPart;
+                        u4.MaxForce = Vector3.new(60000, 60000, 60000);
+                        u4.Position = l__Character__2.HumanoidRootPart.Position + Vector3.new(0,30,0)
+    
+                    end;
+                end);
+                    game:GetService("UserInputService").InputBegan:Connect(function(Input)
+                        if Input.KeyCode == Enum.KeyCode.R then
+                            if game:GetService("UserInputService"):GetFocusedTextBox() then return end
+                            if u5 or u1 == false then
+                                return;
+                            end;
+                            game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.3), {FieldOfView = 78}):Play()
+                            Ringtone(13850747440)
+                            wait(0.1)
+                            coroutine.wrap(function()
+                                repeat game:GetService("RunService").Stepped:Wait() until OWNER.Character.Humanoid.FloorMaterial ~= Enum.Material.Air
+                                if u6 == false then return end
+                                game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.45), {FieldOfView = 70}):Play()
+                                all = false
+                                Ringtone(13850747895)
+                                AnimPlay(13850663836, 1)
+                                u1 = false;
+                                u6 = false;
+                                if u3 then
+                                    u3:Destroy();
+                                    u3 = nil;
+                                end
+                                if u4 then
+                                    u4:Destroy();
+                                    u4 = nil;
+                                end
+                                if u2.IsPlaying then
+                                    u2:Stop();
+                                end;
+                                wait(0.1)
+                                coroutine.wrap(function()
+                                wait(0.9)
+                                end)()
+                                u4 = Instance.new("BodyPosition");
+                                u4.Name = "NA";
+                                u4.Parent = l__Character__2.HumanoidRootPart;
+                                u4.MaxForce = Vector3.new(60000, 60000, 60000);
+                                u4.Position = l__Character__2.HumanoidRootPart.Position;
+                                wait(2.1)
+                                OWNER.Character.HumanoidRootPart:FindFirstChildWhichIsA("BodyPosition"):Destroy()
+                                all = true
+                                wait(0.5)
+                                fly = false;
+                            end)()
+                            u5 = true;
+                            u6 = true;
+                            u7:Play();
+                            local v5 = Instance.new("BodyVelocity", l__Character__2.HumanoidRootPart);
+                            v5.MaxForce = Vector3.new(50000, 50000, 50000);
+                            v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, Mouse.Hit.p).lookVector * 175;
+                            u3.MaxTorque = Vector3.new(30000, 30000, 30000);
+                            u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, Mouse.Hit.p);
+                            u4.Parent = nil;
+                            l__Humanoid__3.AutoRotate = false;
                             if u2.IsPlaying then
                                 u2:Stop();
                             end;
-                            wait(0.1)
-                            coroutine.wrap(function()
-                            wait(0.9)
-                            end)()
-                            u4 = Instance.new("BodyPosition");
-                            u4.Name = "NA";
-                            u4.Parent = l__Character__2.HumanoidRootPart;
-                            u4.MaxForce = Vector3.new(60000, 60000, 60000);
-                            u4.Position = l__Character__2.HumanoidRootPart.Position;
-                            wait(2.1)
-                            OWNER.Character.HumanoidRootPart:FindFirstChildWhichIsA("BodyPosition"):Destroy()
-                            all = true
-                            wait(0.5)
-                            fly = false;
-                        end)()
-                        u5 = true;
-                        u6 = true;
-                        u7:Play();
-                        local v5 = Instance.new("BodyVelocity", l__Character__2.HumanoidRootPart);
-                        v5.MaxForce = Vector3.new(50000, 50000, 50000);
-                        v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, Mouse.Hit.p).lookVector * 175;
-                        u3.MaxTorque = Vector3.new(30000, 30000, 30000);
-                        u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, Mouse.Hit.p);
-                        u4.Parent = nil;
-                        l__Humanoid__3.AutoRotate = false;
+                            while u6 do
+                                v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, Mouse.Hit.p).lookVector * 160;
+                                u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, Mouse.Hit.p);
+                                game:GetService("RunService").Stepped:Wait()
+                            end;
+                            l__Humanoid__3.AutoRotate = true;
+                            v5:Destroy();
+                            if u4 ~= nil then
+                                u4.Position = l__Character__2.HumanoidRootPart.Position;
+                                u4.Parent = l__Character__2.HumanoidRootPart;
+                            end;
+                            if u3 ~= nil then
+                                u3.MaxTorque = Vector3.new(30000, 0, 30000);
+                                u3.CFrame = CFrame.new(0, 0, 0);
+                            end;
+                            u6 = false;
+                            if u1 then
+                                u2:Play();
+                            end;
+                            u7:Stop();
+                            wait(0.3);
+                            u5 = false;
+                        end;
+                    end);
+                    game:GetService("UserInputService").InputEnded:Connect(function(Input)
+                        if Input.KeyCode == Enum.KeyCode.R then
+                            Stop()
+                            if game:GetService("UserInputService"):GetFocusedTextBox() then return end
+                            u6 = false;
+                            game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.4), {FieldOfView = 70}):Play()
+                        end;
+                    end);
+                game:GetService("UserInputService").InputBegan:Connect(function(Input)
+                    if Input.KeyCode == Enum.KeyCode.Q and fly == true then
+                        if game:GetService("UserInputService"):GetFocusedTextBox() then return end
+                        game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.55), {FieldOfView = 70}):Play()
+                        u1 = false;
+                        u6 = false;
+                        u3:Destroy();
+                        u3 = nil;
+                        u4:Destroy();
+                        u4 = nil;
                         if u2.IsPlaying then
                             u2:Stop();
                         end;
-                        while u6 do
-                            v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, Mouse.Hit.p).lookVector * 160;
-                            u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, Mouse.Hit.p);
-                            game:GetService("RunService").Stepped:Wait()
-                        end;
-                        l__Humanoid__3.AutoRotate = true;
-                        v5:Destroy();
-                        if u4 ~= nil then
-                            u4.Position = l__Character__2.HumanoidRootPart.Position;
-                            u4.Parent = l__Character__2.HumanoidRootPart;
-                        end;
-                        if u3 ~= nil then
-                            u3.MaxTorque = Vector3.new(30000, 0, 30000);
-                            u3.CFrame = CFrame.new(0, 0, 0);
-                        end;
-                        u6 = false;
-                        if u1 then
-                            u2:Play();
-                        end;
-                        u7:Stop();
-                        wait(0.3);
-                        u5 = false;
-                    end;
-                end);
-                game:GetService("UserInputService").InputEnded:Connect(function(Input)
-                    if Input.KeyCode == Enum.KeyCode.R then
+                        Ringtone(6392304334)
+                        AnimPlay(13850654420, 1)
+                        AnimPlay(13850657882, 1)
+                        wait(0.19)
+                        u9 = Instance.new("BodyVelocity")
+                        u9.Name = "VC"
+                        u9.MaxForce = Vector3.new(0,4000,0)
+                        u9.Velocity = Vector3.new(0,-87,0)
+                        u9.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+                        AnimStop(13850657882, 1)
+                        repeat game:GetService("RunService").Stepped:Wait() until OWNER.Character.Humanoid.FloorMaterial ~= Enum.Material.Air
+                        Ringtone(13850747895)
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.VC:Destroy()
+                        AnimStop(13850654420, 1)
+                        AnimPlay(13850663836, 1)
+                        wait(0.17)
+                        u4 = Instance.new("BodyPosition");
+                        u4.Name = "NA";
+                        u4.Parent = l__Character__2.HumanoidRootPart;
+                        u4.MaxForce = Vector3.new(60000, 60000, 60000);
+                        u4.Position = l__Character__2.HumanoidRootPart.Position;
+                        wait(0.5)
+                        fly = false;
+                        wait(2)
+                        OWNER.Character.HumanoidRootPart:FindFirstChildWhichIsA("BodyPosition"):Destroy()
                         Stop()
-                        if game:GetService("UserInputService"):GetFocusedTextBox() then return end
-                        u6 = false;
-                        game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.4), {FieldOfView = 70}):Play()
                     end;
                 end);
-            game:GetService("UserInputService").InputBegan:Connect(function(Input)
-                if Input.KeyCode == Enum.KeyCode.Q and fly == true then
-                    if game:GetService("UserInputService"):GetFocusedTextBox() then return end
-                    game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.55), {FieldOfView = 70}):Play()
-                    u1 = false;
-                    u6 = false;
-                    u3:Destroy();
-                    u3 = nil;
-                    u4:Destroy();
-                    u4 = nil;
-                    if u2.IsPlaying then
-                        u2:Stop();
-                    end;
-                    Ringtone(6392304334)
-                    AnimPlay(13850654420, 1)
-                    AnimPlay(13850657882, 1)
-                    wait(0.19)
-                    u9 = Instance.new("BodyVelocity")
-                    u9.Name = "VC"
-                    u9.MaxForce = Vector3.new(0,4000,0)
-                    u9.Velocity = Vector3.new(0,-87,0)
-                    u9.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
-                    AnimStop(13850657882, 1)
-                    repeat game:GetService("RunService").Stepped:Wait() until OWNER.Character.Humanoid.FloorMaterial ~= Enum.Material.Air
-                    Ringtone(13850747895)
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.VC:Destroy()
-                    AnimStop(13850654420, 1)
-                    AnimPlay(13850663836, 1)
-                    wait(0.17)
-                    u4 = Instance.new("BodyPosition");
-                    u4.Name = "NA";
-                    u4.Parent = l__Character__2.HumanoidRootPart;
-                    u4.MaxForce = Vector3.new(60000, 60000, 60000);
-                    u4.Position = l__Character__2.HumanoidRootPart.Position;
-                    wait(0.5)
-                    fly = false;
-                    wait(2)
-                    OWNER.Character.HumanoidRootPart:FindFirstChildWhichIsA("BodyPosition"):Destroy()
-                    Stop()
-                end;
-            end);
-        end))
-        Animation4.Name = "Hover"
-        Animation4.Parent = LocalScript1
-        Animation4.AnimationId = "rbxassetid://13850660986"
-        RemoteEvent5.Name = "re"
-        RemoteEvent5.Parent = LocalScript1
-        Animation6.Name = "Fly"
-        Animation6.Parent = LocalScript1
-        Animation6.AnimationId = "rbxassetid://13850654420"
-        for i,v in pairs(mas:GetChildren()) do
-            v.Parent = game.Players.LocalPlayer.Backpack
-            pcall(function() v:MakeJoints() end)
+            end))
+            Animation4.Name = "Hover"
+            Animation4.Parent = LocalScript1
+            Animation4.AnimationId = "rbxassetid://13850660986"
+            RemoteEvent5.Name = "re"
+            RemoteEvent5.Parent = LocalScript1
+            Animation6.Name = "Fly"
+            Animation6.Parent = LocalScript1
+            Animation6.AnimationId = "rbxassetid://13850654420"
+            for i,v in pairs(mas:GetChildren()) do
+                v.Parent = game.Players.LocalPlayer.Backpack
+                pcall(function() v:MakeJoints() end)
+            end
+            mas:Destroy()
+            for i,v in pairs(cors) do
+                spawn(function()
+                    pcall(v)
+                end)
+            end
         end
-        mas:Destroy()
-        for i,v in pairs(cors) do
-            spawn(function()
-                pcall(v)
-            end)
-        end
-    end
-    game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
-    wait(1)
-    Fly()
+        game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
+        wait(1)
+        Fly()    
 end)
 tool.AddButton("script flying have sound",function()
     function Ringtone(ID)
@@ -5838,7 +5839,7 @@ Diego.AddButton("fake animatoin best ",function()
     Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=4417977954"
     Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=4417978624"
     Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=707897309"
-    Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=4417979645"
+    Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=742638842"
     Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=707853694"
     Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=3135793091"
     Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=2791328524"
