@@ -3988,6 +3988,10 @@ tool.AddButton("speed",function()
     Humanoid.WalkSpeed = _G.WS;
     end)
 tool.AddButton("Aimlock Q", function()
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,-7)
+    wait(.1)
+    
+    
     Settings = {
         Kalslock = {
         Enabled = true,
@@ -3997,7 +4001,7 @@ tool.AddButton("Aimlock Q", function()
         notifaction = true,
         pingprediction = false,
         FOV = math.huge,
-        RESOVLER = true,
+        RESOVLER = false,
         Tracer = true,
         TracerColor = Color3.new(255,255,255),
         TracerTransparency = 0.75,
@@ -4197,15 +4201,15 @@ tool.AddButton("Aimlock Q", function()
     game:GetService"RunService".Stepped:connect(function()
         local currentvel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
         if spinsky == true then
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-500,500), math.random(-8,-8), math.random(-500,500))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-250,250), math.random(-8,-8), math.random(-250,250))
                 wait(.1)
         end
     end)
     game:GetService"RunService".Stepped:connect(function()
         if enabled and Plr.Character ~= nil and Plr.Character:FindFirstChild("HumanoidRootPart") then
+    
             game.Workspace.CurrentCamera.CameraSubject = Plr.Character
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,-8,7)
-    
             placemarker.CFrame = CFrame.new(Plr.Character.HumanoidRootPart.Position)
                             local Vector1 = CC:WorldToViewportPoint(Plr.Character.HumanoidRootPart.Position)
             Line.Color = Settings.Kalslock.TracerColor
@@ -4668,10 +4672,11 @@ tool.AddButton("Aimlock Q", function()
     game.Players.LocalPlayer.CharacterAdded:Connect(AnimationPack)
     end
     end
-
-
-
-
+    
+    
+    
+    
+    
     
     end)
 
