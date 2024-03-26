@@ -3987,7 +3987,7 @@ tool.AddButton("speed",function()
     end)
     Humanoid.WalkSpeed = _G.WS;
     end)
-tool.AddButton("Aimlock Q", function()
+tool.AddButton("Aimlock QQ", function()
     game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,7,0)
     wait(.1)
     
@@ -3995,7 +3995,7 @@ tool.AddButton("Aimlock Q", function()
     Settings = {
         Kalslock = {
         Enabled = true,
-        Key = "x",
+        Key = "q",
         showdot = false,
         airshots = false,
         notifaction = true,
