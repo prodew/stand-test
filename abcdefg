@@ -4143,8 +4143,9 @@ tool.AddButton("Aimlock QQ", function()
     game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(k)
         if k == Settings.Kalslock.Key and Settings.Kalslock.Enabled then
             if enabled == true then
-                enabled = false
                 spinsky = false
+                wait(.1)
+                enabled = false
                 game.Workspace.CurrentCamera.CameraSubject = game.Players.dew103272101.Character
                 wait(0.3)
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,1,0)
