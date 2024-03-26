@@ -824,6 +824,7 @@ tool.AddToggle("Hit Sense", false, function(t)
     end
 end)
 tool.AddButton("god spin prass K",function()
+
     getgenv().toggle = false
 game:GetService("UserInputService").InputBegan:Connect(function(ea , ONG)
 if ea.KeyCode == Enum.KeyCode.K and not ONG then 
@@ -837,17 +838,88 @@ if getgenv().toggle == true then
     end)
     getgenv().loop2 = game:GetService("RunService").RenderStepped:Connect(function()
     game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 50
+    
+    game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.Visible = true
+
+
+    
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.LifeImage.Image = "http://www.roblox.com/asset/?id=14555713902"
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.Image = "http://www.roblox.com/asset/?id=5209162390"
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = "http://www.roblox.com/asset/?id=11767037107"
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.bar.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
+
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.LifeImage.ImageColor3 = Color3.fromRGB(255, 253, 255)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.Visible = true
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Border.Visible = true
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.ImageColor3 = Color3.fromRGB(255, 253, 255)
+
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.TextLabel.Text = "ON"
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Border.Visible = true
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.bar.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.ImageColor3 = Color3.fromRGB(55,55,55)
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.Text = "SPIN"
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Border.Visible = true
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = "rbxassetid://11767037107"
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.ImageColor3 = Color3.fromRGB(255, 253, 255)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
+    
     end)
 end
 
     if getgenv().toggle == false then 
-    if getgenv().loop then 
+    if getgenv().loop then
+        game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.Visible = true
+
+        
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.LifeImage.Image = "http://www.roblox.com/asset/?id=14555713902"
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.Image = "http://www.roblox.com/asset/?id=5209162390"
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = "http://www.roblox.com/asset/?id=11767037107"
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(255, 253, 255)
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.BackgroundColor3 = Color3.fromRGB(175, 0, 0)
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.bar.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.BackgroundColor3 = Color3.fromRGB(107, 50, 124)
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.LifeImage.ImageColor3 = Color3.fromRGB(200, 0, 0)
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.Visible = true
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Border.Visible = false
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.ImageColor3 = Color3.fromRGB(200, 0, 0)
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.TextLabel.Text = "                    Armor"
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Border.Visible = false
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.bar.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.ImageColor3 = Color3.fromRGB(55,55,55)
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.Text = "Energy                     "
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Border.Visible = false
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = "rbxassetid://11767037107"
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.ImageColor3 = Color3.fromRGB(255, 255, 255)
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255) 
        getgenv().loop:Disconnect()
        getgenv().loop2:Disconnect()
                 end
             end
     end
 end)
+
+
 end)
 tool.AddButton("god blocking",function()
     game:GetService("RunService").stepped:connect(function()
@@ -7341,9 +7413,6 @@ game.Players.LocalPlayer.CharacterAdded:connect(function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,150,0)
 
     game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.Visible = true
-    game.Players.LocalPlayer.CharacterAdded:Connect(function()
-    game.Players.LocalPlayer.PlayerGui:WaitForChild("MainScreenGui"):WaitForChild("Bar"):WaitForChild("HP"):WaitForChild("Picture"):WaitForChild("Life").Visible = true
-    end)
     
     
     game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Life.LifeImage.Image = "http://www.roblox.com/asset/?id=14555713902"
