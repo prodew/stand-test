@@ -4125,14 +4125,14 @@ tool.AddButton("Aimlock Q", function()
     game:GetService"RunService".Stepped:connect(function()
         local currentvel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
         if spinsky == true then
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-500,500), math.random(10,10), math.random(-500,500))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-500,500), math.random(-8,-8), math.random(-500,500))
                 wait(.1)
         end
     end)
     game:GetService"RunService".Stepped:connect(function()
         if enabled and Plr.Character ~= nil and Plr.Character:FindFirstChild("HumanoidRootPart") then
             game.Workspace.CurrentCamera.CameraSubject = Plr.Character
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,-8,7)
     
             placemarker.CFrame = CFrame.new(Plr.Character.HumanoidRootPart.Position)
                             local Vector1 = CC:WorldToViewportPoint(Plr.Character.HumanoidRootPart.Position)
