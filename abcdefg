@@ -3988,7 +3988,7 @@ tool.AddButton("speed",function()
     Humanoid.WalkSpeed = _G.WS;
     end)
 tool.AddButton("Aimlock Q", function()
-    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,-7)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,7)
     wait(.1)
     
     
@@ -7453,3 +7453,11 @@ game.Players.LocalPlayer.CharacterAdded:connect(function()
 
 
 end)
+
+--game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.armA4Xsr.Character.HumanoidRootPart.CFrame * CFrame.new(0,10,0)
+
+
+--game.players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,200,0)
+--game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.players.armA4Xsr.character.HumanoidRootPart.CFrame * CFrame.new(0, 10, 0)
+--game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.armA4Xsr.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -10)
+
