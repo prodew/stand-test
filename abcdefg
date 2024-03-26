@@ -87,7 +87,7 @@ local BT = Window.AddPage("Buy tool")
 local Diego = Window.AddPage("animatoin")
 local meme = Window.AddPage("meme deer")
 local song = Window.AddPage("Song immos")
-local scary = Window.AddPage("scary Effect")
+local scary = Window.AddPage("immos folder")
 local dance = Window.AddPage("cute dance")
 local MIs = Window.AddPage("Misc")
 
@@ -7464,6 +7464,101 @@ dance.AddButton("BLACKPINK Dance V2", function()
     DefaultDanceanim.AnimationId = "rbxassetid://14548619594";
     game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(DefaultDanceanim):Play()
 end)
+scary.AddLabel("car speed immos")
+scary.AddSlider("Car Speed", {Min = 20, Max = 150, Def = 50}, function(T)
+    getgenv().Speed = T
+    end)
+    scary.AddSlider("Rotate Speed", {Min = 2, Max = 5, Def = 2}, function(R)
+    getgenv().RSpeed = R
+    end)
+    
+    scary.AddToggle("Activate Car", false, function(F)
+    if F == true then
+    local P = Instance.new("BodyAngularVelocity")
+    P.Parent = workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat
+    P.Name = "Rotate"
+    P.MaxTorque = Vector3.new(99e99,99e99,99e99)
+    P.AngularVelocity = Vector3.new(0,0,0)
+    
+    local P_2 = Instance.new("BodyVelocity")
+    P_2.Parent = workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat
+    P_2.Name = "Move"
+    P_2.MaxForce = Vector3.new(99e99,0,99e99)
+    P_2.Velocity = Vector3.new(0,0,0)
+    
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+    c1 = Mouse.KeyDown:Connect(function(KeyDownXD)
+            if KeyDownXD == "w" then
+            getgenv().LoopAudio = true
+                game:GetService('RunService'):UnbindFromRenderStep("CCC2")
+                game:GetService('RunService'):BindToRenderStep("CCC", 0 , function()
+                workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X*getgenv().Speed,0,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z*getgenv().Speed)
+                end)
+            elseif KeyDownXD == "a" then
+                game:GetService('RunService'):UnbindFromRenderStep("RRR2")
+                game:GetService('RunService'):BindToRenderStep("RRR", 0 , function()
+                workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate.AngularVelocity = Vector3.new(0,getgenv().RSpeed,0)
+                end)
+            elseif KeyDownXD == "d" then
+                game:GetService('RunService'):UnbindFromRenderStep("RRR")
+                game:GetService('RunService'):BindToRenderStep("RRR2", 0 , function()
+                workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate.AngularVelocity = Vector3.new(0,-getgenv().RSpeed,0)
+                end)
+            elseif KeyDownXD == "s" then
+                game:GetService('RunService'):UnbindFromRenderStep("CCC")
+                game:GetService('RunService'):BindToRenderStep("CCC2", 0 , function()
+                workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X * -getgenv().Speed,0,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z * -getgenv().Speed)
+                end)
+        end
+    end)
+    c2 = Mouse.KeyUp:Connect(function(KeyDownXD)
+        if KeyDownXD == "w" then
+            game:GetService('RunService'):UnbindFromRenderStep("CCC")
+            wait(0.01)
+            workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move.Velocity = Vector3.new(0,0,0)
+        elseif KeyDownXD == "a" then
+            game:GetService('RunService'):UnbindFromRenderStep("RRR")
+            workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate.AngularVelocity = Vector3.new(0,0,0)
+        elseif KeyDownXD == "d" then
+            game:GetService('RunService'):UnbindFromRenderStep("RRR2")
+            workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate.AngularVelocity = Vector3.new(0,0,0)
+        elseif KeyDownXD == "s" then
+            game:GetService('RunService'):UnbindFromRenderStep("CCC2")
+            wait(0.01)
+            workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move.Velocity = Vector3.new(0,0,0)
+        end
+    end)
+    elseif F == false then
+    c1:Disconnect()
+    c2:Disconnect()
+    workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate:Destroy()
+    workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move:Destroy()
+    end
+    end)
+    
+    scary.AddButton("Fix Rotation", function()
+    workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Rotate:Destroy()
+    workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Move:Destroy()
+    wait(1)
+    local P_3 = Instance.new("BodyGyro")
+    P_3.Name = "Fix"
+    P_3.MaxTorque = Vector3.new(99e99,99e99,99e99)
+    P_3.Parent = workspace.Vehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat
+    wait(3)
+    workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat.Fix:Destroy()
+    wait(0.5)
+    local P = Instance.new("BodyAngularVelocity")
+    P.Parent = workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat
+    P.Name = "Rotate"
+    P.MaxTorque = Vector3.new(99e99,99e99,99e99)
+    P.AngularVelocity = Vector3.new(0,0,0)
+    
+    local P_2 = Instance.new("BodyVelocity")
+    P_2.Parent = workspace.OldVehicles[game.Players.LocalPlayer.Name .."BIKE"].Seat
+    P_2.Name = "Move"
+    P_2.MaxForce = Vector3.new(99e99,0,99e99)
+    P_2.Velocity = Vector3.new(0,0,0)
+    end)
 scary.AddButton("Ahh?!",function()
     Ringtone(6073433216)
     wait(0.1)
