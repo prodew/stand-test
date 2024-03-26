@@ -4144,10 +4144,10 @@ tool.AddButton("Aimlock QQ", function()
         if k == Settings.Kalslock.Key and Settings.Kalslock.Enabled then
             if enabled == true then
                 spinsky = false
-                wait(.1)
+                wait(1)
                 enabled = false
                 game.Workspace.CurrentCamera.CameraSubject = game.Players.dew103272101.Character
-                wait(0.3)
+                wait(0.1)
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,1,0)
                 if Settings.Kalslock.notifaction == true then
                     Plr = getClosestPlayerToCursor()
