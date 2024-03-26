@@ -4149,6 +4149,7 @@ tool.AddButton("Aimlock QQ", function()
                 game.Workspace.CurrentCamera.CameraSubject = game.Players.dew103272101.Character
                 wait(0.1)
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,1,0)
+                itstimetosky = false
                 if Settings.Kalslock.notifaction == true then
                     Plr = getClosestPlayerToCursor()
                 game.StarterGui:SetCore("SendNotification", {
@@ -4162,6 +4163,7 @@ tool.AddButton("Aimlock QQ", function()
                 Plr = getClosestPlayerToCursor()
                 enabled = true
                 spinsky = true
+                itstimetosky = true
                 if Settings.Kalslock.notifaction == true then
                     game.StarterGui:SetCore("SendNotification", {
                         Title = "ez lock nega";
@@ -4204,6 +4206,15 @@ tool.AddButton("Aimlock QQ", function()
         if spinsky == true then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-500,500), math.random(0,0), math.random(-500,500))
                 wait(.1)
+        end
+    end)
+    game:GetService"RunService".Stepped:connect(function()
+        local currentvel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+        if itstimetosky == true then
+            Ringtone(8968843545)
+            wait(2)
+            Ringtone(8968843545)
+            wait(2)
         end
     end)
     game:GetService"RunService".Stepped:connect(function()
