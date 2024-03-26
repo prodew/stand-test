@@ -4124,9 +4124,11 @@ tool.AddButton("Aimlock Q", function()
     local ping = nil;
     game:GetService"RunService".Stepped:connect(function()
         if spinsky == true then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-500,500), math.random(10,10), math.random(-500,500))
-            game:GetService("RunService").RenderStepped:Wait()
-            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = currentvel
+            repeat wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-500,500), math.random(10,10), math.random(-500,500))
+                game:GetService("RunService").RenderStepped:Wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = currentvel
+            until Plr.Character.BodyEffects["K.O"].Value == true
         end
     end)
     game:GetService"RunService".Stepped:connect(function()
