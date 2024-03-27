@@ -4371,7 +4371,7 @@ tool.AddButton("Aimlock QQ", function()
                     enabled = true
                     spinsky = true
                     Skyshoting = true
-                    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,-7)
+                    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,7,0)
                     wait(.1)
                     local surg = game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]")
                     surg.Parent = game.Players.LocalPlayer.Character
@@ -4421,7 +4421,7 @@ tool.AddButton("Aimlock QQ", function()
         end)
         game:GetService"RunService".Stepped:connect(function()
             if Skyshoting == true then
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,11,0)* CFrame.Angles(math.pi*1,0,0)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,11,0)--* CFrame.Angles(math.pi*1,0,0)
             end
         end)
     
@@ -8018,6 +8018,23 @@ end)
 
 
 
+    -- Chat Connect --
+   -- local MainAccount = "dew103272101" -- MainAccount Username
+   -- game.Players[MainAccount].Chatted:Connect(function(msg)
+   --     if msg:lower() == "!bring" then
+   --         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.dew103272101.Character.HumanoidRootPart.CFrame * CFrame.new(0,10,0)
+   --     elseif msg:lower() == "/e test" then
+   --         chat("work")
+    --    elseif msg:lower() == "!cash" then
+--
+            
+    --        game.ReplicatedStorage.MainEvent:FireServer("DropMoney","10000")
+     --   end
+   -- end)
+
+
+
+
 
 
 
@@ -8031,4 +8048,5 @@ end)
 --game.players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,200,0)
 --game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.players.armA4Xsr.character.HumanoidRootPart.CFrame * CFrame.new(0, 10, 0)
 --game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.armA4Xsr.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -10)
+
 
