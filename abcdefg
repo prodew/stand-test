@@ -3999,7 +3999,7 @@ tool.AddButton("Aimlock QQ", function()
         showdot = true,
         airshots = false,
         notifaction = true,
-        pingprediction = true,
+        pingprediction = false,
         FOV = math.huge,
         RESOVLER = false,
         Tracer = true,
