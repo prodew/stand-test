@@ -1965,6 +1965,39 @@ tool.AddButton("push!",function()
                     game:GetService('Players').LocalPlayer.Character:WaitForChild('FULLY_LOADED_CHAR');
                     kick()
             end)
+            tool.AddButton("throw upV2!",function()
+                function kick()
+                    local KIckAnim = Instance.new('Animation');
+                    KIckAnim.AnimationId = "rbxassetid://3096047107";
+                        tool = Instance.new("Tool")
+                        tool.RequiresHandle = false
+                        tool.Name = "throw"
+                        tool.Activated:Connect(function()
+                            game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
+                            wait(0.3)
+                            game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
+                        end)
+                        tool.Parent = game.Players.LocalPlayer.Backpack
+                
+                    end;
+                    game:GetService('Players').LocalPlayer.Character:WaitForChild('FULLY_LOADED_CHAR');
+                    kick()
+                
+                    getgenv().POWERFLING = 400
+                
+                 
+                
+                    game:GetService("RunService").heartbeat:Connect(function()
+                        for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
+                            if (v.Animation.AnimationId:match("rbxassetid://3096047107")) then
+                                local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X*getgenv().POWERFLING,getgenv().POWERFLING,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z*getgenv().POWERFLING)
+                                game:GetService("RunService").RenderStepped:Wait()
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
+                            end
+                        end
+                    end)
+                end)
             tool.AddButton("throw up!",function()
                 function kick()
                     local KIckAnim = Instance.new('Animation');
@@ -2597,6 +2630,10 @@ tool.AddButton("Neck Grab v2", function()
     end)
     end)
 
+    tool.AddButton("iI'm gonna rip you in half now!", function()
+
+        end)
+
     tool.AddButton("Neck Grab v1", function()
         local LocalPlayer = game.Players.LocalPlayer
         local Character = LocalPlayer.Character
@@ -2654,6 +2691,7 @@ tool.AddButton("Neck Grab v2", function()
                     AT0, AT1, AP, A0 = Align(Ins.Parent.UpperTorso, LocalPlayer.Character.RightHand, Vector3.new(0, 0, 0), Vector3.new(90, 0, 160))
                 end
                 
+
                 repeat task.wait() until Ins.Parent == nil
                 
                 Character.Animate.Disabled = true
