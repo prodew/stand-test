@@ -1974,7 +1974,7 @@ tool.AddButton("push!",function()
                         tool.Name = "throw"
                         tool.Activated:Connect(function()
                             game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
-                            wait(0.2)
+                            wait(0.3)
                             game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
                         end)
                         tool.Parent = game.Players.LocalPlayer.Backpack
@@ -2630,91 +2630,6 @@ tool.AddButton("Neck Grab v2", function()
     end)
     end)
 
-    tool.AddButton("Spin on grab work or no?", function()
-    local LocalPlayer = game.Players.LocalPlayer
-    local Character = LocalPlayer.Character
-    
-    local IM = game:GetService("ReplicatedStorage").IM.ANIM
-    
-    local PlayersChar = workspace.Players
-    
-    if _G.JOINTWATCHER then
-        _G.JOINTWATCHER:Disconnect()
-    end
-    
-    local function Align(P0, P1, P, R)
-        local A0, A1 = Instance.new("Attachment", P0), Instance.new("Attachment", P1)
-        
-        local AP, AO = Instance.new("AlignPosition", P0), Instance.new("AlignOrientation", P0)
-        
-        A1.Position = P
-        A0.Rotation = R
-        
-        AP.RigidityEnabled = true
-        AP.Responsiveness = 200
-        AP.Attachment0 = A0
-        AP.Attachment1 = A1
-        
-        AO.MaxTorque = 9e9
-        AO.Responsiveness = 200
-        AO.RigidityEnabled = true
-        AO.Attachment0 = A0
-        AO.Attachment1 = A1
-        
-        return A0, A1, AP, A0
-    end
-    
-    _G.JOINTWATCHER = PlayersChar.DescendantAdded:Connect(function(Ins)
-        if Ins:IsA("Weld") and Ins.Name == "GRABBING_CONSTRAINT" then
-            repeat task.wait() until Ins.Part0 ~= nil
-            repeat task.wait() until Ins:FindFirstChildOfClass("RopeConstraint")
-            
-            local AT0, AT1, AP, A0
-            
-            if Ins.Part0:IsDescendantOf(LocalPlayer.Character) then
-                Ins:FindFirstChildOfClass("RopeConstraint").Length = 9e9
-                
-                Character.Animate.Disabled = true
-                
-                for _, Anim in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
-                    Anim:Stop()
-                end
-                
-                Character.Animate.Disabled = false
-                
-                Character.Humanoid:LoadAnimation(IM.RightAim):Play()
-                
-                AT0, AT1, AP, A0 = Align(Ins.Parent.UpperTorso, LocalPlayer.Character.RightHand, Vector3.new(0, 0, 0), Vector3.new(90, 0, 0))
-                grabspin = true
-            end
-            
-            game:GetService("RunService").stepped:connect(function()
-                if grabspin == true then
-                    AT0, AT1, AP, A0 = Align(Ins.Parent.UpperTorso, LocalPlayer.Character.RightHand, Vector3.new(0, 0, 0), Vector3.new(90, 0, 0))
-                    wait(1)
-                    AT0, AT1, AP, A0 = Align(Ins.Parent.UpperTorso, LocalPlayer.Character.RightHand, Vector3.new(0, 0, 0), Vector3.new(90, 0, 160))
-                end
-            end)
-            
-
-
-            repeat task.wait() until Ins.Parent == nil
-            
-            Character.Animate.Disabled = true
-            grabspin = false
-        for _, Anim in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
-            Anim:Stop()
-        end
-        
-        Character.Animate.Disabled = false
-            
-            AT0:Destroy()
-            AT1:Destroy()
-            AP:Destroy()
-            A0:Destroy()
-        end
-    end)
-    end)
 
     tool.AddButton("iI'm gonna rip you in half now!", function()
         function Ringtone(ID)
@@ -2832,7 +2747,7 @@ tool.AddButton("Neck Grab v2", function()
             AO.MaxTorque = 9e9
             AO.Responsiveness = 200
             AO.RigidityEnabled = true
-            AO.Attachment0 = A0
+            AO.Attachment0 = A0 
             AO.Attachment1 = A1
             
             return A0, A1, AP, A0
@@ -2859,6 +2774,7 @@ tool.AddButton("Neck Grab v2", function()
                     Character.Humanoid:LoadAnimation(IM.RightAim):Play()
                     
                     AT0, AT1, AP, A0 = Align(Ins.Parent.UpperTorso, LocalPlayer.Character.RightHand, Vector3.new(0, 0, 0), Vector3.new(90, 0, 160))
+        
                 end
         
                 Ringtone(7148332723)
@@ -2869,8 +2785,9 @@ tool.AddButton("Neck Grab v2", function()
                 wait(.1)
                 Ins.Parent.LowerTorso.Position = Vector3.new(0,-1200,0)
                 Call()
-                task.wait(.1)
+                wait(.1)
                 game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
+        
                 repeat task.wait() until Ins.Parent == nil
                 
                 Character.Animate.Disabled = true
@@ -4281,34 +4198,6 @@ tool.AddButton("speed",function()
     Humanoid.WalkSpeed = _G.WS;
     end)
 tool.AddButton("Aimlock QQ", function()
-    local savepos = game.Players.LocalPlayer.Character.UpperTorso.Position
-    local Brokie = game.Workspace.Ignored.Shop["[LMG] - $3978"]
-    local BROIMMO = game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"]
-             game.Players.LocalPlayer.Character:MoveTo(Brokie.Head.Position)
-             wait(0.25)
-             fireclickdetector(Brokie.ClickDetector)
-             wait(0.25)
-             game.Players.LocalPlayer.Character:MoveTo(BROIMMO.Head.Position)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector) wait(1)
-             fireclickdetector(game.Workspace.Ignored.Shop["200 [LMG Ammo] - $318"].ClickDetector)
-         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(savepos)
-         wait(.25)
-         wait(1)
-        
 
         Settings = {
             Kalslock = {
@@ -4466,7 +4355,7 @@ tool.AddButton("Aimlock QQ", function()
                     game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(0,0), math.random(0,0), math.random(0,0))
                     enabled = false
                     game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,3,0)
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,11,0)
 
                     if Settings.Kalslock.notifaction == true then
                         Plr = getClosestPlayerToCursor()
