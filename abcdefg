@@ -4173,10 +4173,12 @@ tool.AddButton("Aimlock QQ", function()
                     spinsky = false
                     wait(.5)
                     enabled = false
+                    local surg = game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]")
+                    surg.Parent = game.Players.LocalPlayer.Backpack
                     game.Workspace.CurrentCamera.CameraSubject = game.Players.dew103272101.Character
                     wait(0.1)
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,1,0)
-    
+
                     if Settings.Kalslock.notifaction == true then
                         Plr = getClosestPlayerToCursor()
                     game.StarterGui:SetCore("SendNotification", {
@@ -4190,6 +4192,8 @@ tool.AddButton("Aimlock QQ", function()
                     Plr = getClosestPlayerToCursor()
                     enabled = true
                     spinsky = true
+                    game.PlayersLocalPlayer.Character.Humanoid:UnequipTools()
+                    wait(.1)
     
                     local surg = game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]")
                     surg.Parent = game.Players.LocalPlayer.Character
