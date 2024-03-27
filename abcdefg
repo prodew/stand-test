@@ -4207,7 +4207,7 @@ tool.AddButton("Aimlock QQ", function()
     game:GetService"RunService".Stepped:connect(function()
         local currentvel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
         if spinsky == true then
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-300,300), math.random(0,0), math.random(-300,300))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-200,200), math.random(0,0), math.random(-200,200))
                 wait(.1)
         end
     end)
@@ -4218,7 +4218,7 @@ tool.AddButton("Aimlock QQ", function()
         if enabled and Plr.Character ~= nil and Plr.Character:FindFirstChild("HumanoidRootPart") then
     
             game.Workspace.CurrentCamera.CameraSubject = Plr.Character
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,13,0)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,11,0)
             placemarker.CFrame = CFrame.new(Plr.Character.HumanoidRootPart.Position)
                             local Vector1 = CC:WorldToViewportPoint(Plr.Character.HumanoidRootPart.Position)
             Line.Color = Settings.Kalslock.TracerColor
