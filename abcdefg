@@ -4207,7 +4207,7 @@ tool.AddButton("Aimlock QQ", function()
     game:GetService"RunService".Stepped:connect(function()
         local currentvel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
         if spinsky == true then
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-500,500), math.random(0,0), math.random(-500,500))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-300,300), math.random(0,0), math.random(-300,300))
                 wait(.1)
         end
     end)
