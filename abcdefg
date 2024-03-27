@@ -4015,10 +4015,26 @@ tool.AddButton("Aimlock QQ", function()
          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(savepos)
          wait(.25)
          wait(1)
-        game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,7,0)
-        wait(.1)
         
-        
+
+
+local Char = game.Players.LocalPlayer.Character
+local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+
+for i,v in next, Hum:GetPlayingAnimationTracks() do
+    v:Stop()
+end
+wait(1)
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616006778"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616008087"
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616013216"
+Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616010382"
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616008936"
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616003713"
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616005863"
+game.Players.LocalPlayer.Character.Humanoid.Jump = true  
+
         Settings = {
             Kalslock = {
             Enabled = true,
@@ -4171,12 +4187,10 @@ tool.AddButton("Aimlock QQ", function()
             if k == Settings.Kalslock.Key and Settings.Kalslock.Enabled then
                 if enabled == true then
                     spinsky = false
-                    wait(.5)
+                    Skyshoting = false
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(0,0), math.random(0,0), math.random(0,0))
                     enabled = false
-                    local surg = game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]")
-                    surg.Parent = game.Players.LocalPlayer.Backpack
-                    game.Workspace.CurrentCamera.CameraSubject = game.Players.dew103272101.Character
-                    wait(0.1)
+                    game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,1,0)
 
                     if Settings.Kalslock.notifaction == true then
@@ -4192,9 +4206,9 @@ tool.AddButton("Aimlock QQ", function()
                     Plr = getClosestPlayerToCursor()
                     enabled = true
                     spinsky = true
-                    game.PlayersLocalPlayer.Character.Humanoid:UnequipTools()
+                    Skyshoting = true
+                    game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]").GripPos = Vector3.new(0,-7,-7)
                     wait(.1)
-    
                     local surg = game.Players.LocalPlayer.Backpack:FindFirstChild("[LMG]")
                     surg.Parent = game.Players.LocalPlayer.Character
                     if Settings.Kalslock.notifaction == true then
@@ -4237,8 +4251,13 @@ tool.AddButton("Aimlock QQ", function()
         game:GetService"RunService".Stepped:connect(function()
             local currentvel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
             if spinsky == true then
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-200,200), math.random(0,0), math.random(-200,200))
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-300,300), math.random(0,0), math.random(-300,300))
                     wait(.1)
+            end
+        end)
+        game:GetService"RunService".Stepped:connect(function()
+            if Skyshoting == true then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,11,0)* CFrame.Angles(math.pi*1,0,0)
             end
         end)
     
@@ -4248,7 +4267,6 @@ tool.AddButton("Aimlock QQ", function()
             if enabled and Plr.Character ~= nil and Plr.Character:FindFirstChild("HumanoidRootPart") then
         
                 game.Workspace.CurrentCamera.CameraSubject = Plr.Character
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,11,0)
                 placemarker.CFrame = CFrame.new(Plr.Character.HumanoidRootPart.Position)
                                 local Vector1 = CC:WorldToViewportPoint(Plr.Character.HumanoidRootPart.Position)
                 Line.Color = Settings.Kalslock.TracerColor
@@ -4717,6 +4735,8 @@ tool.AddButton("Aimlock QQ", function()
         
         
         
+        
+
     
     end)
 
