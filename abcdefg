@@ -2631,7 +2631,176 @@ tool.AddButton("Neck Grab v2", function()
     end)
 
     tool.AddButton("iI'm gonna rip you in half now!", function()
-
+        function Ringtone(ID)
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+            local Tool = nil
+            if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+            Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+            game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+            game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Character
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+            local args = {
+                [1] = "RingTone",
+                [2] = ID
+                
+            }
+            game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Backpack
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+            if Tool ~= true then
+            if Tool then
+            Tool.Parent = game:GetService("Players").LocalPlayer.Character
+            end
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Play Sound 
+            game.Players:chat("/e cm")
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Stop Audio
+            function Stop()
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+            local Tool = nil
+            if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+            Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+            game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+            game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Character
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Backpack
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+            if Tool ~= true then
+            if Tool then
+            Tool.Parent = game:GetService("Players").LocalPlayer.Character
+            end
+            end
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Change Id
+            function Change(ID)
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+            local Tool = nil
+            if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+            Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+            game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+            game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Character
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+            local args = {
+                [1] = "RingTone",
+                [2] = ID
+                
+            }
+            game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+            game:GetService("Players").LocalPlayer.Backpack
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+            if Tool ~= true then
+            if Tool then
+            Tool.Parent = game:GetService("Players").LocalPlayer.Character
+            end
+            end
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
+            function Call()
+            game.Players:chat("/e cm")
+            end
+            --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
+            -- Ringtone(ID)
+            -- Stop()
+            -- Change(ID)
+            -- Call()
+        
+        local LocalPlayer = game.Players.LocalPlayer
+        local Character = LocalPlayer.Character
+        
+        local IM = game:GetService("ReplicatedStorage").IM.ANIM
+        
+        local PlayersChar = workspace.Players
+        
+        if _G.JOINTWATCHER then
+            _G.JOINTWATCHER:Disconnect()
+        end
+        
+        local function Align(P0, P1, P, R)
+            local A0, A1 = Instance.new("Attachment", P0), Instance.new("Attachment", P1)
+            
+            local AP, AO = Instance.new("AlignPosition", P0), Instance.new("AlignOrientation", P0)
+            
+            A1.Position = P
+            A0.Rotation = R
+            
+            AP.RigidityEnabled = true
+            AP.Responsiveness = 200
+            AP.Attachment0 = A0
+            AP.Attachment1 = A1
+            
+            AO.MaxTorque = 9e9
+            AO.Responsiveness = 200
+            AO.RigidityEnabled = true
+            AO.Attachment0 = A0
+            AO.Attachment1 = A1
+            
+            return A0, A1, AP, A0
+        end
+        
+        _G.JOINTWATCHER = PlayersChar.DescendantAdded:Connect(function(Ins)
+            if Ins:IsA("Weld") and Ins.Name == "GRABBING_CONSTRAINT" then
+                repeat task.wait() until Ins.Part0 ~= nil
+                repeat task.wait() until Ins:FindFirstChildOfClass("RopeConstraint")
+                
+                local AT0, AT1, AP, A0
+                
+                if Ins.Part0:IsDescendantOf(LocalPlayer.Character) then
+                    Ins:FindFirstChildOfClass("RopeConstraint").Length = 9e9
+                    
+                    Character.Animate.Disabled = true
+                    
+                    for _, Anim in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
+                        Anim:Stop()
+                    end
+                    
+                    Character.Animate.Disabled = false
+                    
+                    Character.Humanoid:LoadAnimation(IM.RightAim):Play()
+                    
+                    AT0, AT1, AP, A0 = Align(Ins.Parent.UpperTorso, LocalPlayer.Character.RightHand, Vector3.new(0, 0, 0), Vector3.new(90, 0, 160))
+                end
+        
+                Ringtone(7148332723)
+                wait(.1)
+                Call()
+                wait(2.3)
+                Ringtone(7711222302)
+                wait(.1)
+                Ins.Parent.LowerTorso.Position = Vector3.new(0,-1200,0)
+                Call()
+                task.wait(.1)
+                game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
+                repeat task.wait() until Ins.Parent == nil
+                
+                Character.Animate.Disabled = true
+                    
+            for _, Anim in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
+                Anim:Stop()
+            end
+            
+            Character.Animate.Disabled = false
+                
+                AT0:Destroy()
+                AT1:Destroy()
+                AP:Destroy()
+                A0:Destroy()
+            end
+        end)
         end)
 
     tool.AddButton("Neck Grab v1", function()
