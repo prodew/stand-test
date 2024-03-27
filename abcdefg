@@ -4163,10 +4163,9 @@ tool.AddButton("Aimlock QQ", function()
                 Plr = getClosestPlayerToCursor()
                 enabled = true
                 spinsky = true
-                wait(.1)
-                chat("This is made in heaven!")
-                Ringtone(4650379787)
-                    wait(1)
+
+                local surg = game.Players.LocalPlayer.Backpack:FindFirstChild("[Mask]")
+                surg.Parent = game.Players.LocalPlayer.Character
                 if Settings.Kalslock.notifaction == true then
                     game.StarterGui:SetCore("SendNotification", {
                         Title = "ez lock nega";
