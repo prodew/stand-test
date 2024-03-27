@@ -1974,7 +1974,7 @@ tool.AddButton("push!",function()
                         tool.Name = "throw"
                         tool.Activated:Connect(function()
                             game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
-                            wait(0.3)
+                            wait(0.2)
                             game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
                         end)
                         tool.Parent = game.Players.LocalPlayer.Backpack
@@ -4380,7 +4380,7 @@ tool.AddButton("Aimlock QQ", function()
                     game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(0,0), math.random(0,0), math.random(0,0))
                     enabled = false
                     game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,1,0)
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Plr.Character.HumanoidRootPart.CFrame * CFrame.new(0,3,0)
 
                     if Settings.Kalslock.notifaction == true then
                         Plr = getClosestPlayerToCursor()
