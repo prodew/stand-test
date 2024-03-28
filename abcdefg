@@ -2211,6 +2211,7 @@ tool.AddButton("push!",function()
                             tool.Name = "Throw"
                             tool.Activated:Connect(function()
                                 game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
+                                wait(.1)
                                 for i , v in pairs(game.Players[tostring(game.Players.LocalPlayer.Character.BodyEffects.Grabbed.Value)].Character:GetChildren()) do
                                     if v:IsA("MeshPart") then
                                         v.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -30)
