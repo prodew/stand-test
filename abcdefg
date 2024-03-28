@@ -2106,6 +2106,7 @@ tool.AddButton("push!",function()
                         tool.RequiresHandle = false
                         tool.Name = "hold"
                         tool.Activated:Connect(function()
+                        Ringtone(9114890978)
                             game.ReplicatedStorage.MainEvent:FireServer("Grabbing",true)
                         wait(0.1)
                         Call()
@@ -2115,73 +2116,129 @@ tool.AddButton("push!",function()
                     game:GetService('Players').LocalPlayer.Character:WaitForChild('FULLY_LOADED_CHAR');
                     kick()
             end)
-            tool.AddButton("throw upV2!",function()
-                function kick()
-                    local KIckAnim = Instance.new('Animation');
-                    KIckAnim.AnimationId = "rbxassetid://3096047107";
-                        tool = Instance.new("Tool")
-                        tool.RequiresHandle = false
-                        tool.Name = "throw"
-                        tool.Activated:Connect(function()
-                            game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
-                            wait(0.3)
-                            game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
-                        end)
-                        tool.Parent = game.Players.LocalPlayer.Backpack
+            tool.AddButton("throw!",function()
+                function Ringtone(ID)
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+                    local Tool = nil
+                    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+                    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+                    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+                    end
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+                    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+                    game:GetService("Players").LocalPlayer.Character
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+                    local args = {
+                        [1] = "RingTone",
+                        [2] = ID
+                        
+                    }
+                    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+                    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+                    game:GetService("Players").LocalPlayer.Backpack
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+                    if Tool ~= true then
+                    if Tool then
+                    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+                    end
+                    end
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Play Sound 
+                    game.Players:chat("/e cm")
+                    end
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Stop Audio
+                    function Stop()
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+                    local Tool = nil
+                    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+                    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+                    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+                    end
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+                    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+                    game:GetService("Players").LocalPlayer.Character
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+                    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+                    game:GetService("Players").LocalPlayer.Backpack
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+                    if Tool ~= true then
+                    if Tool then
+                    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+                    end
+                    end
+                    end
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Change Id
+                    function Change(ID)
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+                    local Tool = nil
+                    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+                    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+                    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+                    end
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+                    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+                    game:GetService("Players").LocalPlayer.Character
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+                    local args = {
+                        [1] = "RingTone",
+                        [2] = ID
+                        
+                    }
+                    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+                    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+                    game:GetService("Players").LocalPlayer.Backpack
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+                    if Tool ~= true then
+                    if Tool then
+                    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+                    end
+                    end
+                    end
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
+                    function Call()
+                    game.Players:chat("/e cm")
+                    end
+                    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
+                    -- Ringtone(ID)
+                    -- Stop()
+                    -- Change(ID)
+                    -- Call()
                 
-                    end;
-                    game:GetService('Players').LocalPlayer.Character:WaitForChild('FULLY_LOADED_CHAR');
-                    kick()
                 
-                    getgenv().POWERFLING = 400
-                
-                 
-                
-                    game:GetService("RunService").heartbeat:Connect(function()
-                        for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
-                            if (v.Animation.AnimationId:match("rbxassetid://3096047107")) then
-                                local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X*getgenv().POWERFLING,getgenv().POWERFLING,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z*getgenv().POWERFLING)
-                                game:GetService("RunService").RenderStepped:Wait()
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
+                    function kick()
+                        local KIckAnim = Instance.new('Animation');
+                        KIckAnim.AnimationId = "rbxassetid://3096047107";
+                            tool = Instance.new("Tool")
+                            tool.RequiresHandle = false
+                            tool.Name = "Throw"
+                            tool.Activated:Connect(function()
+                                game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
+                                wait(0.3)
+                                Ringtone(711753382)
+                                game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
+                            end)
+                            tool.Parent = game.Players.LocalPlayer.Backpack
+                    
+                        end;
+                        game:GetService('Players').LocalPlayer.Character:WaitForChild('FULLY_LOADED_CHAR');
+                        kick()
+                    
+                        getgenv().POWERFLING = 400
+                    
+                     
+                    
+                        game:GetService("RunService").heartbeat:Connect(function()
+                            for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
+                                if (v.Animation.AnimationId:match("rbxassetid://3096047107")) then
+                                    local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+                                    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X*getgenv().POWERFLING,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z*getgenv().POWERFLING)
+                                    game:GetService("RunService").RenderStepped:Wait()
+                                    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
+                                end
                             end
-                        end
-                    end)
+                        end)
                 end)
-            tool.AddButton("throw up!",function()
-                function kick()
-                    local KIckAnim = Instance.new('Animation');
-                    KIckAnim.AnimationId = "rbxassetid://3355740058";
-                        tool = Instance.new("Tool")
-                        tool.RequiresHandle = false
-                        tool.Name = "throw"
-                        tool.Activated:Connect(function()
-                            game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
-                            wait(0.5)
-                            game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
-                        end)
-                        tool.Parent = game.Players.LocalPlayer.Backpack
-                
-                    end;
-                    game:GetService('Players').LocalPlayer.Character:WaitForChild('FULLY_LOADED_CHAR');
-                    kick()
-                
-                    getgenv().POWERFLING = 400
-
-                 
-                
-                    game:GetService("RunService").heartbeat:Connect(function()
-                        for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
-                            if (v.Animation.AnimationId:match("rbxassetid://3355740058")) then
-                                local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X*getgenv().POWERFLING,getgenv().POWERFLING,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z*getgenv().POWERFLING)
-                                game:GetService("RunService").RenderStepped:Wait()
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
-                            end
-                        end
-                    end)
-                
-            end)
 tool.AddButton("kick",function()
     function Ringtone(ID)
         --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
@@ -4360,7 +4417,7 @@ tool.AddButton("Aimlock QQ", function()
             notifaction = true,
             pingprediction = false,
             FOV = math.huge,
-            RESOVLER = false,
+            RESOVLER = true,
             Tracer = true,
             TracerColor = Color3.new(255,255,255),
             TracerTransparency = 0.75,
