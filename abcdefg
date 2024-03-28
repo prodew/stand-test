@@ -2211,9 +2211,14 @@ tool.AddButton("push!",function()
                             tool.Name = "Throw"
                             tool.Activated:Connect(function()
                                 game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):LoadAnimation(KIckAnim):Play()
-                                wait(0.3)
-                                Ringtone(711753382)
+                                for i , v in pairs(game.Players[tostring(game.Players.LocalPlayer.Character.BodyEffects.Grabbed.Value)].Character:GetChildren()) do
+                                    if v:IsA("MeshPart") then
+                                        v.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -30)
+                                    end
+                                    end
+                                wait(0.1)
                                 game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
+                                Ringtone(711753382)
                             end)
                             tool.Parent = game.Players.LocalPlayer.Backpack
                     
@@ -4425,7 +4430,7 @@ tool.AddButton("Aimlock QQ", function()
             Kalslock = {
             Enabled = true,
             Key = "q",
-            showdot = true,
+            showdot = false,
             airshots = false,
             notifaction = true,
             pingprediction = false,
