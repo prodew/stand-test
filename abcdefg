@@ -30,8 +30,6 @@ end)
 
 
 
-
-wait(0.5)
 -- Anti Afk Ril --
 local vu = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
@@ -39,7 +37,8 @@ vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 wait(1)
 vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
--- AntiCheat Bypass Now Execute FireServer("OneMoreTime") --
+game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 9e9
+-- AntiCheat Bypass --
 assert(getrawmetatable)
 gmt = getrawmetatable(game)
 setreadonly(gmt, false)
@@ -5462,7 +5461,7 @@ end
 AnimationPack(game.Players.LocalPlayer.Character)
 game.Players.LocalPlayer.CharacterAdded:Connect(AnimationPack)
 end)
-tool.AddButton("i ron man",function()function Ringtone(ID)
+tool.AddButton("i ron man",function()
     function Ringtone(ID)
         --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
         local Tool = nil
