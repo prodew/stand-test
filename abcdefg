@@ -2106,10 +2106,7 @@ tool.AddButton("push!",function()
                         tool.RequiresHandle = false
                         tool.Name = "hold"
                         tool.Activated:Connect(function()
-                        Ringtone(9114890978)
                             game.ReplicatedStorage.MainEvent:FireServer("Grabbing",true)
-                        wait(0.1)
-                        Call()
                         end)
                         tool.Parent = game.Players.LocalPlayer.Backpack
                     end;
