@@ -2925,6 +2925,7 @@ tool.AddButton("Neck Grab v2", function()
                     
                     AT0, AT1, AP, A0 = Align(Ins.Parent.UpperTorso, LocalPlayer.Character.RightHand, Vector3.new(0, 0, 0), Vector3.new(90, 0, 160))
                     wait(.1)
+                    chat("I'm gonna rip you in half now")
                     Ringtone(7148332723)
                     wait(.1)
                     Call()
