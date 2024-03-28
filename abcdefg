@@ -2880,7 +2880,7 @@ tool.AddButton("Neck Grab v2", function()
                     Character.Humanoid:LoadAnimation(IM.RightAim):Play()
                     
                     AT0, AT1, AP, A0 = Align(Ins.Parent.UpperTorso, LocalPlayer.Character.RightHand, Vector3.new(0, 0, 0), Vector3.new(90, 0, 160))
-
+                    wait(.1)
                     Ringtone(7148332723)
                     wait(.1)
                     Call()
