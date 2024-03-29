@@ -4432,7 +4432,7 @@ tool.AddButton("Aimlock QQ", function()
             Kalslock = {
             Enabled = true,
             Key = "q",
-            showdot = false,
+            showdot = true,
             airshots = false,
             notifaction = true,
             pingprediction = false,
