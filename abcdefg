@@ -803,10 +803,10 @@ tool.AddToggle("Hit Sense", false, function(t)
         if Math == 1 and not furrimode then
         furrimode = true
         if game.Players.LocalPlayer.Character.LowerTorso:FindFirstChild("PhoneRing") then
-        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://231731980" then
+        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://7102498124" then
         ReCall()
         else
-        Ringtone(231731980)
+        Ringtone(7102498124)
         end
         end
         ReCall()
@@ -817,10 +817,10 @@ tool.AddToggle("Hit Sense", false, function(t)
         furrimode = false
         elseif Math == 2 and not furrimode then
         furrimode = true 
-        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://231731980" then
+        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://7102498124" then
         ReCall()
         else
-        Ringtone(231731980)
+        Ringtone(7102498124)
         end
         ReCall()
         d1:Stop()
@@ -830,10 +830,10 @@ tool.AddToggle("Hit Sense", false, function(t)
         furrimode = false
         else if Math == 3 and not furrimode then
         furrimode = true
-        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://231731980" then
+        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://7102498124" then
         ReCall()
         else
-        Ringtone(231731980)
+        Ringtone(7102498124)
         end
         d1:Stop()
         d2:Stop()
