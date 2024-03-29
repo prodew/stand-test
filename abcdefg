@@ -8188,7 +8188,17 @@ game.Players.LocalPlayer.CharacterAdded:connect(function()
     game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
 
 
-
+    wait(1)
+    local H_1 = Instance.new("Highlight")
+    H_1.Parent = game.Players.LocalPlayer.Character
+    H_1.FillColor = Color3.new(0,0,0)
+    H_1.OutlineColor = Color3.new(255,255,255)
+    H_1.FillTransparency = 0.9
+    H_1.OutlineTransparency = 0.75
+    wait(0.1)
+    local a = Instance.new("StringValue")
+    a.Parent = game.Players.LocalPlayer.Character.BodyEffects.Movement
+    a.Name = "FastSprint"
 
 
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,150,0)
