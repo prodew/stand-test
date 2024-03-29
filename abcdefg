@@ -803,20 +803,10 @@ tool.AddToggle("Hit Sense", false, function(t)
         if Math == 1 and not furrimode then
         furrimode = true
         if game.Players.LocalPlayer.Character.LowerTorso:FindFirstChild("PhoneRing") then
-        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://3280066384" then
-            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
-            wait(.1)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
+        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://231731980" then
         ReCall()
-        wait(2)
-        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
         else
-            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
-            wait(.1)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
-        Ringtone(3280066384)
-        wait(2)
-        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
+        Ringtone(231731980)
         end
         end
         ReCall()
@@ -827,20 +817,10 @@ tool.AddToggle("Hit Sense", false, function(t)
         furrimode = false
         elseif Math == 2 and not furrimode then
         furrimode = true 
-        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://3280066384" then
-            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
-            wait(.1)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
+        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://231731980" then
         ReCall()
-        wait(2)
-        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
         else
-            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
-            wait(.1)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
-        Ringtone(3280066384)
-        wait(2)
-        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
+        Ringtone(231731980)
         end
         ReCall()
         d1:Stop()
@@ -850,20 +830,10 @@ tool.AddToggle("Hit Sense", false, function(t)
         furrimode = false
         else if Math == 3 and not furrimode then
         furrimode = true
-        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://3280066384" then
-            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
-            wait(.1)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
+        if game.Players.LocalPlayer.Character.LowerTorso.PhoneRing.SoundId == "rbxassetid://231731980" then
         ReCall()
-        wait(2)
-        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
         else
-            game.ReplicatedStorage.MainEvent:FireServer("Block",true)
-            wait(.1)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 10)
-        Ringtone(3280066384)
-        wait(2)
-        game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer("Block",false)
+        Ringtone(231731980)
         end
         d1:Stop()
         d2:Stop()
@@ -879,6 +849,159 @@ tool.AddToggle("Hit Sense", false, function(t)
     elseif t == false then
     game:GetService('RunService'):UnbindFromRenderStep("Spidersense")
     end
+end)
+tool.AddButton("def bullet",function()
+    
+function Ringtone(ID)
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+    local args = {
+        [1] = "RingTone",
+        [2] = ID
+        
+    }
+    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Play Sound 
+    game.Players:chat("/e cm")
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Stop Audio
+    function Stop()
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Change Id
+    function Change(ID)
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+    local args = {
+        [1] = "RingTone",
+        [2] = ID
+        
+    }
+    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
+    function Call()
+    game.Players:chat("/e cm")
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
+    -- Ringtone(ID)
+    -- Stop()
+    -- Change(ID)
+    -- Call()
+
+
+
+local Player = game.Players.LocalPlayer
+
+local OriginalKeyUpValue = 0
+
+local Swing1 = Instance.new('Animation', game.ReplicatedStorage)
+Swing1.AnimationId = 'rbxassetid://0'
+
+local Swing2 = Instance.new('Animation', game.ReplicatedStorage)
+Swing2.AnimationId = 'rbxassetid://0'
+
+local Swing3 = Instance.new('Animation', game.ReplicatedStorage)
+Swing3.AnimationId = 'rbxassetid://0'
+
+local Swing4 = Instance.new('Animation', game.ReplicatedStorage)
+Swing4.AnimationId = 'rbxassetid://0'
+
+local _1 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing1)
+local _2 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing2)
+local _3 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing3)
+local _4 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing4)
+
+
+
+game.Workspace.Ignored.DescendantAdded:Connect(function(Ray)
+    if Ray:IsA('Attachment') then
+        local mag = (Player.Character.PrimaryPart.Position - Ray.WorldPosition).Magnitude
+        if mag <= 6 then
+            local Math = math.random(1,4)
+                if Math == 1 then
+                    _2:Stop()
+                    _3:Stop()
+                    _1:Play()
+                    _4:Stop()
+                    _1:AdjustSpeed(2.4)
+                    Ringtone(7674672480)
+                elseif Math == 2 then
+                    _1:Stop()
+                    _3:Stop()
+                    _2:Play()
+                    _4:Stop()
+                    _2:AdjustSpeed(2.4)
+                    Ringtone(7674672480)
+                elseif Math == 3 then
+                    _1:Stop()
+                    _2:Stop()
+                    _3:Play()
+                    _4:Stop()
+                    _3:AdjustSpeed(2.4)
+                    Ringtone(7674672480)
+                elseif Math == 4 then
+                    _1:Stop()
+                    _2:Stop()
+                    _3:Stop()
+                    _4:Play()
+                    _4:AdjustSpeed(2.4)
+                    Ringtone(7674672480)
+                end
+        end
+    end
+end)
 end)
 tool.AddButton("god spin prass K",function()
 
