@@ -2921,8 +2921,8 @@ tool.AddButton("Neck Grab v2", function()
             end
             end
             --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
-            function Ca2ll()
-            game.Players:chat("/e ccccm")
+            function call()
+            game.Players:chat("/e cm")
             end
             --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
             -- Ringtone(ID)
@@ -2986,18 +2986,18 @@ tool.AddButton("Neck Grab v2", function()
                     AT0, AT1, AP, A0 = Align(Ins.Parent.UpperTorso, LocalPlayer.Character.RightHand, Vector3.new(0, 0, 0), Vector3.new(90, 0, 160))
                     wait(.1)
                     chat("I'm gonna rip you in half now")
-                    Ri1ngtone(7148332723)
+                    ringtone(7148332723)
                     wait(.1)
-                    Ca2ll()
+                    call()
                     wait(2.3)
-                    Ri1ngtone(5951833277)--5951833277
+                    ringtone(5951833277)--5951833277
                     wait(.1)
                     Ins.Parent.LowerTorso.Position = Vector3.new(0,-1200,0)
-                    Ca2ll()
+                    call()
                     wait(.1)
                     game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
                     wait(.5)
-                    Ri1ngtone(5825316184)--5951833277
+                    ringtone(5825316184)--5951833277
         
                 end
         
