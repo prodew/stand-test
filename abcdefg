@@ -876,7 +876,7 @@ getgenv().toggle = not getgenv().toggle
 if getgenv().toggle == true then 
     getgenv().loop = game:GetService("RunService").Heartbeat:Connect(function()
     local currentvel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(0,2000), math.random(0,2000), math.random(0,2000))
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-2000,2000), math.random(-2000,2000), math.random(-2000,2000))
     game:GetService("RunService").RenderStepped:Wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = currentvel
     end)
