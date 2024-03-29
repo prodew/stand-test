@@ -7017,6 +7017,15 @@ BT.AddButton("armor",function()
              wait(0.25)
          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(savepos)
 end)
+BT.AddButton("Grenda",function()
+    local savepos = game.Players.LocalPlayer.Character.UpperTorso.Position
+             local Brokie = game.workspace.Ignored.Shop["[Grenda] - $743"]
+             game.Players.LocalPlayer.Character:MoveTo(Brokie.Head.Position)
+             wait(0.25)
+             fireclickdetector(Brokie.ClickDetector)
+             wait(0.25)
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(savepos)
+end)
 BT.AddButton("fire armor",function()
     local savepos = game.Players.LocalPlayer.Character.UpperTorso.Position
              local Brokie = game.workspace.Ignored.Shop["[Fire Armor] - $2493"]
