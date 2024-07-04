@@ -1,9 +1,0 @@
-
-game.StarterGui:SetCore("SendNotification", {
-	Title = "Stop using my script"; 
-	Text = "script dew";
-    Text = "discrod deer14927";
-	Icon = "rbxassetid://16005965106";
-	Duration = 9e9;
-	})
-    wait(0.1)
